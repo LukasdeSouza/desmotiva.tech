@@ -176,8 +176,7 @@ export default function Home() {
                   "{currentPhrase}"
                 </blockquote>
                 
-                {/* Share Buttons */}
-                <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4" role="group" aria-label="Opções de compartilhamento">
+                <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mb-2" role="group" aria-label="Opções de compartilhamento">
                   <button
                     onClick={copyToClipboard}
                     className="flex items-center justify-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200 w-full sm:w-auto"
@@ -222,8 +221,8 @@ export default function Home() {
                     LinkedIn
                   </button>
                 </div>
+                <small className='text-slate-400 mt-1'>use a hashtag #desmotivadev, bora pegar top 1 fi!</small>
 
-                {/* Anúncio após a frase */}
                 <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-800">
                   <AdSense 
                     adSlot="auto"
