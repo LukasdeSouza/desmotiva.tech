@@ -109,34 +109,34 @@ export default function Home() {
       />
       
       <div className="min-h-screen bg-black text-white font-sans">
-        <main className="flex min-h-screen flex-col items-center justify-center px-6 py-12 font-sans">
+        <main className="flex min-h-screen flex-col items-center justify-center px-4 py-8 font-sans sm:px-6 sm:py-12">
           {/* Header */}
-          <header className="text-center mb-16">
+          <header className="text-center mb-12 sm:mb-16">
             <div>
               <Image
                 src="/logo-rosto-desmotiva.dev.png"
                 alt="Desmotiva Dev - Humor para desenvolvedores e programadores"
-                width={200}
-                height={200}
-                className="mx-auto rounded-lg"
+                width={160}
+                height={160}
+                className="mx-auto rounded-lg sm:w-[200px] sm:h-[200px]"
                 priority
               />
             </div>
-            <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-6xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
               desmotiva.dev
             </h1>
-            <p className="text-lg text-gray-400 max-w-2xl -mt-4 mb-1 font-light">
+            <p className="text-base sm:text-lg text-gray-400 max-w-2xl -mt-2 sm:-mt-4 mb-2 sm:mb-1 font-light px-4">
               sua dose diária de desmotivação, <i>antes da daily</i>.
             </p>
-            <small className='font-light px-3 py-1 bg-slate-600 rounded-xl'>100+ frases and counting</small>
+            <small className='font-light px-3 py-1 bg-slate-600 rounded-xl text-xs sm:text-sm'>100+ frases and counting</small>
           </header>
 
           {/* Main Content */}
-          <section className="flex flex-col items-center gap-8 max-w-4xl w-full">
+          <section className="flex flex-col items-center gap-6 sm:gap-8 max-w-4xl w-full">
             {/* Button */}
             <button
               onClick={getRandomPhrase}
-              className="px-8 py-4 -mt-6 bg-white text-black rounded-lg hover:bg-gray-200 transition-all duration-200 transform hover:scale-105 text-lg"
+              className="px-6 sm:px-8 py-3 sm:py-4 -mt-4 sm:-mt-6 bg-white text-black rounded-lg hover:bg-gray-200 transition-all duration-200 transform hover:scale-105 text-base sm:text-lg w-full max-w-xs sm:max-w-none sm:w-auto"
               aria-label="Gerar frase desmotivacional aleatória para desenvolvedores"
             >
               Pegue aqui seu desmotivacional
@@ -155,19 +155,19 @@ export default function Home() {
             {isVisible && (
               <article 
                 key={animationKey}
-                className={`bg-gray-900 border border-gray-800 rounded-lg p-8 max-w-3xl w-full text-center ${
+                className={`bg-gray-900 border border-gray-800 rounded-lg p-4 sm:p-8 max-w-3xl w-full text-center mx-4 sm:mx-0 ${
                   animationKey === 0 ? 'animate-fade-in' : 'animate-phrase-update'
                 }`}
               >
-                <blockquote className="text-xl leading-relaxed text-gray-100 mb-6">
+                <blockquote className="text-lg sm:text-xl leading-relaxed text-gray-100 mb-4 sm:mb-6">
                   "{currentPhrase}"
                 </blockquote>
                 
                 {/* Share Buttons */}
-                <div className="flex flex-wrap justify-center gap-4" role="group" aria-label="Opções de compartilhamento">
+                <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4" role="group" aria-label="Opções de compartilhamento">
                   <button
                     onClick={copyToClipboard}
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200"
+                    className="flex items-center justify-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200 w-full sm:w-auto"
                     aria-label="Copiar frase para área de transferência"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -178,7 +178,7 @@ export default function Home() {
 
                   <button
                     onClick={shareWhatsApp}
-                    className="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg transition-colors duration-200"
+                    className="flex items-center justify-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg transition-colors duration-200 w-full sm:w-auto"
                     aria-label="Compartilhar no WhatsApp"
                   >
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -189,7 +189,7 @@ export default function Home() {
 
                   <button
                     onClick={shareTwitter}
-                    className="flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg transition-colors duration-200"
+                    className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg transition-colors duration-200 w-full sm:w-auto"
                     aria-label="Compartilhar no Twitter"
                   >
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -200,7 +200,7 @@ export default function Home() {
                 </div>
 
                 {/* Anúncio após a frase */}
-                <div className="mt-8 pt-6 border-t border-gray-800">
+                <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-800">
                   <AdSense 
                     adSlot="auto"
                     adFormat="rectangle"
@@ -211,8 +211,8 @@ export default function Home() {
               </article>
             )}
 
-            {/* Anúncio Banner no Footer */}
-            <div className="w-full max-w-4xl mt-12 mb-8">
+            {/* Anúncio Banner no Footer - Mobile Friendly */}
+            <div className="w-full max-w-4xl mt-8 sm:mt-12 mb-6 sm:mb-8 px-4 sm:px-0">
               <AdSense 
                 adSlot="auto"
                 adFormat="auto"
@@ -222,7 +222,7 @@ export default function Home() {
           </section>
 
           {/* Footer */}
-          <footer className="text-center">
+          <footer className="text-center px-4">
             <nav className="mb-4 space-x-4">
               <a href="/faq" className="text-gray-400 hover:text-gray-300 transition-colors text-sm underline">
                 FAQ
@@ -231,7 +231,7 @@ export default function Home() {
                 Privacidade
               </a>
             </nav>
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">
               Feito com 💔 por <a href="https://twitter.com/deveprogramar" className="hover:text-gray-300 transition-colors">@deveprogramar</a> <br /> 
               (para desenvolvedores que precisam de uma realidade check)
             </p>
