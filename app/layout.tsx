@@ -90,6 +90,23 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <GoogleAnalytics gaId="G-TVJ6B98YGD" />
+      {/* Google AdSense */}
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2481190522332368"
+        crossOrigin="anonymous"
+      />
+      {/* Auto Ads */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-2481190522332368",
+              enable_page_level_ads: true
+            });
+          `
+        }}
+      />
       <body
         className={`${poppins.variable} antialiased`}
       >
