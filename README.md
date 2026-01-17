@@ -11,11 +11,11 @@
 
 ### Funcionalidades
 
-- 🎲 **Frases Aleatórias**: Mais de 50 frases desmotivacionais únicas
-- 📱 **Compartilhamento**: WhatsApp, Twitter e cópia para área de transferência
-- 🎨 **Design Responsivo**: Interface elegante e moderna
-- ⚡ **Performance**: Otimizado para velocidade e SEO
-- 🌙 **Tema Escuro**: Visual profissional e confortável
+-  **Frases Aleatórias**: Mais de 50 frases desmotivacionais únicas
+-  **Compartilhamento**: WhatsApp, Twitter e cópia para área de transferência
+-  **Design Responsivo**: Interface elegante e moderna
+-  **Performance**: Otimizado para velocidade e SEO
+-  **Tema Escuro**: Visual profissional e confortável
 
 ## Tecnologias Utilizadas
 
