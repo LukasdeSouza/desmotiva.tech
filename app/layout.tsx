@@ -11,8 +11,8 @@ const poppins = Poppins({
 
 
 export const metadata: Metadata = {
-  title: "Desmotiva Tech  - Sua desmotivação diária na área de tecnologia",
-  description: "receba diariamente mensagens de desmontivação para sua carreira como dev",
+  title: "Desmotiva Dev - Sua desmotivação diária na área de tecnologia",
+  description: "Receba diariamente mensagens de desmotivação para sua carreira como dev",
 };
 
 export default function RootLayout({

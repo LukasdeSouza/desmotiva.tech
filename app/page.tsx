@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { phrases } from './utils/mocks';
+import Image from 'next/image';
 
 export default function Home() {
   const [currentPhrase, setCurrentPhrase] = useState<string>('');
@@ -48,11 +49,21 @@ export default function Home() {
       <main className="flex min-h-screen flex-col items-center justify-center px-6 py-12 font-sans">
         {/* Header */}
         <div className="text-center mb-16">
+          <div className="mb-6">
+            <Image
+              src="/logo.png"
+              alt="Desmotiva Tech Logo"
+              width={200}
+              height={200}
+              className="mx-auto rounded-lg"
+              priority
+            />
+          </div>
           <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
             desmotiva.tech
           </h1>
-          <p className="text-xl text-gray-400 max-w-2xl">
-            sua dose diária de desmotivação, antes da daily.
+          <p className="text-lg text-gray-400 max-w-2xl -mt-4 font-light">
+            sua dose diária de desmotivação, <i>antes da daily</i>.
           </p>
         </div>
 
@@ -61,7 +72,7 @@ export default function Home() {
           {/* Button */}
           <button
             onClick={getRandomPhrase}
-            className="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all duration-200 transform hover:scale-105 text-lg"
+            className="px-8 py-4 bg-white text-black rounded-lg hover:bg-gray-200 transition-all duration-200 transform hover:scale-105 text-lg"
           >
             Pegue aqui seu desmotivacional
           </button>
@@ -74,7 +85,7 @@ export default function Home() {
                 animationKey === 0 ? 'animate-fade-in' : 'animate-phrase-update'
               }`}
             >
-              <p className="text-xl leading-relaxed text-gray-100 mb-6">
+              <p className="text-lg leading-relaxed text-gray-100 mb-6 font-light">
                 "{currentPhrase}"
               </p>
               
