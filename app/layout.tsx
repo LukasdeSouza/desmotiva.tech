@@ -11,6 +11,7 @@ const poppins = Poppins({
 
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://desmotiva.dev'),
   title: "Desmotiva Dev - Sua dose diária de desmotivação para desenvolvedores",
   description: "Receba frases desmotivacionais hilariantes sobre programação, desenvolvimento de software e carreira tech. O site que todo desenvolvedor precisa para uma realidade check diária.",
   keywords: [
