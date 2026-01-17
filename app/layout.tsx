@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
 
 const poppins = Poppins({
@@ -88,6 +89,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
+      <GoogleAnalytics gaId="G-TVJ6B98YGD" />
       <body
         className={`${poppins.variable} antialiased`}
       >

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { phrases } from './utils/mocks';
+import { sendGAEvent } from '@next/third-parties/google';
 import Image from 'next/image';
 
 export default function Home() {
@@ -22,6 +23,12 @@ export default function Home() {
     setCurrentPhrase(newPhrase);
     setIsVisible(true);
     setCopied(false);
+
+    // Track event no Google Analytics
+    sendGAEvent('event', 'generate_phrase', {
+      event_category: 'engagement',
+      event_label: 'new_phrase_generated'
+    });
   };
 
   const copyToClipboard = async () => {
@@ -29,6 +36,12 @@ export default function Home() {
       await navigator.clipboard.writeText(currentPhrase);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+
+      // Track copy event
+      sendGAEvent('event', 'copy_phrase', {
+        event_category: 'engagement',
+        event_label: 'phrase_copied'
+      });
     } catch (err) {
       console.error('Erro ao copiar:', err);
     }
@@ -37,11 +50,25 @@ export default function Home() {
   const shareWhatsApp = () => {
     const text = encodeURIComponent(`${currentPhrase}\n\n🔥 Pegue o seu em: desmotiva.dev`);
     window.open(`https://wa.me/?text=${text}`, '_blank');
+
+    // Track WhatsApp share
+    sendGAEvent('event', 'share', {
+      method: 'whatsapp',
+      content_type: 'phrase',
+      event_category: 'social_share'
+    });
   };
 
   const shareTwitter = () => {
     const text = encodeURIComponent(`${currentPhrase}\n\n🔥 #desmotivadev`);
     window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
+
+    // Track Twitter share
+    sendGAEvent('event', 'share', {
+      method: 'twitter',
+      content_type: 'phrase',
+      event_category: 'social_share'
+    });
   };
 
   return (
