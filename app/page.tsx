@@ -97,9 +97,10 @@ export default function Home() {
             <h1 className="text-6xl font-bold -mt-6 mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
               desmotiva.dev
             </h1>
-            <p className="text-lg text-gray-400 max-w-2xl font-light -mt-2">
+            <p className="text-lg text-gray-400 max-w-2xl font-light -mt-5 mb-2">
               sua dose diária de desmotivação, <i>antes da daily</i>.
             </p>
+            <small className='px-2 py-1 font-light bg-slate-800 rounded-lg'>100+ frases atualmente, and counting</small>
           </header>
 
           {/* Main Content */}
@@ -107,10 +108,10 @@ export default function Home() {
             {/* Button */}
             <button
               onClick={getRandomPhrase}
-              className="px-8 py-4 bg-white text-black rounded-lg hover:bg-gray-200 transition-all duration-200 transform hover:scale-105 text-lg"
+              className="px-8 py-2 bg-white text-black rounded-lg hover:bg-gray-200 transition-all duration-200 transform hover:scale-105 text-lg"
               aria-label="Gerar frase desmotivacional aleatória para desenvolvedores"
             >
-              Pegue aqui seu desmotivacional
+              Pegue aqui seu desmotivacional, brow
             </button>
 
             {/* Phrase Display */}
