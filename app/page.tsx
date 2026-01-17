@@ -256,7 +256,7 @@ export default function Home() {
             </nav>
             <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">
               Feito com 💔 por <a href="https://twitter.com/deveprogramar" className="hover:text-gray-300 transition-colors">@deveprogramar</a> <br /> 
-              (para desenvolvedores que precisam de uma realidade check)
+              (para desenvolvedores que precisam de uma reality check)
             </p>
           </footer>
         </main>

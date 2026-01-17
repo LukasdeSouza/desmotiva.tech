@@ -48,4 +48,4 @@ Este projeto está sob a licença MIT.
 
 **Feito com 💔 por [@deveprogramar](https://twitter.com/deveprogramar)**
 
-*Para desenvolvedores que precisam de uma realidade check*
+*Para desenvolvedores que precisam de um reality check*
