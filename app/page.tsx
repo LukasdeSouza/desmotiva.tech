@@ -246,13 +246,24 @@ export default function Home() {
 
           {/* Footer */}
           <footer className="text-center px-4">
-            <nav className="mb-4 space-x-4">
-              <a href="/faq" className="text-gray-400 hover:text-gray-300 transition-colors text-sm underline">
-                FAQ
-              </a>
-              <a href="/privacy" className="text-gray-400 hover:text-gray-300 transition-colors text-sm underline">
-                Privacidade
-              </a>
+            <nav className="mb-6">
+              <div className="flex flex-wrap justify-center gap-4 mb-4">
+                <a href="/sobre" className="text-gray-400 hover:text-gray-300 transition-colors text-sm underline">
+                  Sobre
+                </a>
+                <a href="/blog" className="text-gray-400 hover:text-gray-300 transition-colors text-sm underline">
+                  Blog
+                </a>
+                <a href="/recursos" className="text-gray-400 hover:text-gray-300 transition-colors text-sm underline">
+                  Recursos
+                </a>
+                <a href="/faq" className="text-gray-400 hover:text-gray-300 transition-colors text-sm underline">
+                  FAQ
+                </a>
+                <a href="/privacy" className="text-gray-400 hover:text-gray-300 transition-colors text-sm underline">
+                  Privacidade
+                </a>
+              </div>
             </nav>
             <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">
               Feito com 💔 por <a href="https://twitter.com/deveprogramar" className="hover:text-gray-300 transition-colors">@deveprogramar</a> <br /> 
