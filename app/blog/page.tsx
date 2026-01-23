@@ -30,34 +30,10 @@ const blogPosts = [
     date: "2026-01-10",
     readTime: "4 min",
     category: "Metodologias"
-  },
-  {
-    id: 4,
-    title: "O Guia Definitivo para Entender Mensagens de Erro",
-    excerpt: "Traduzindo o que o compilador realmente quer dizer quando fala 'unexpected token'.",
-    date: "2026-01-08",
-    readTime: "6 min",
-    category: "Desenvolvimento"
-  },
-  {
-    id: 5,
-    title: "Burnout em Desenvolvedores: Sinais e Soluções",
-    excerpt: "Como identificar e lidar com o esgotamento mental na carreira de desenvolvimento.",
-    date: "2026-01-05",
-    readTime: "8 min",
-    category: "Saúde Mental"
-  },
-  {
-    id: 6,
-    title: "A Arte de Fazer Code Review sem Destruir Egos",
-    excerpt: "Dicas para dar feedback construtivo sem fazer o colega questionar a carreira.",
-    date: "2026-01-03",
-    readTime: "5 min",
-    category: "Soft Skills"
   }
 ];
 
-const categories = ["Todos", "Carreira", "Humor", "Desenvolvimento", "Metodologias", "Saúde Mental", "Soft Skills"];
+const categories = ["Todos", "Carreira", "Humor", "Metodologias"];
 
 export default function Blog() {
   return (

@@ -1,9 +1,11 @@
 #  Desmotiva Dev - Sua Dose Diária de Desmotivação na área tech
 
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fdesmotiva.dev)](https://desmotiva.dev)
-[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38B2AC)](https://tailwindcss.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC)](https://tailwindcss.com/)
+[![i18n](https://img.shields.io/badge/i18n-next--intl-blue)](https://next-intl-docs.vercel.app/)
+[![Languages](https://img.shields.io/badge/languages-PT%20%7C%20EN-green)](https://desmotiva.dev)
 
 ## Sobre o Projeto
 
@@ -11,19 +13,24 @@
 
 ### Funcionalidades
 
--  **Frases Aleatórias**: Mais de 50 frases desmotivacionais únicas
--  **Compartilhamento**: WhatsApp, Twitter e cópia para área de transferência
+-  **Frases Aleatórias**: Mais de 75 frases desmotivacionais únicas
+-  **Internacionalização**: Suporte completo para Português e Inglês 🌍
+-  **Compartilhamento**: WhatsApp, Twitter, LinkedIn e cópia para área de transferência
 -  **Design Responsivo**: Interface elegante e moderna
 -  **Performance**: Otimizado para velocidade e SEO
 -  **Tema Escuro**: Visual profissional e confortável
+-  **Troca de Idioma**: Alternância fácil entre idiomas
 
 ## Tecnologias Utilizadas
 
-- **Next.js 14** - Framework React com App Router
+- **Next.js 16** - Framework React com App Router
 - **TypeScript** - Tipagem estática
-- **Tailwind CSS** - Estilização utilitária
+- **Tailwind CSS 4** - Estilização utilitária
+- **next-intl** - Internacionalização (i18n)
 - **Poppins Font** - Tipografia moderna
 - **Vercel** - Deploy e hospedagem
+- **Google Analytics** - Análise de dados
+- **Google AdSense** - Monetização
 
 ## Palavras-chave
 
@@ -32,9 +39,23 @@
 ## Como Usar
 
 1. Acesse [desmotiva.dev](https://desmotiva.dev)
-2. Clique em "Pegue aqui seu desmotivacional"
-3. Compartilhe a frase ou copie para usar depois
-4. Repita sempre que precisar de uma dose de realidade
+2. Escolha seu idioma (🇧🇷 Português ou 🇺🇸 English)
+3. Clique em "Pegue aqui seu desmotivacional"
+4. Compartilhe a frase ou copie para usar depois
+5. Repita sempre que precisar de uma dose de realidade
+
+## 🌍 Internacionalização
+
+Este projeto suporta múltiplos idiomas:
+
+- **Português (pt)** - Idioma padrão: `https://desmotiva.dev/`
+- **English (en)** - Inglês: `https://desmotiva.dev/en/`
+
+Para mais detalhes sobre a implementação i18n, consulte [INTL_IMPLEMENTATION.md](./INTL_IMPLEMENTATION.md)
+
+### Adicionar Novos Idiomas
+
+Veja o guia completo em [INTL_IMPLEMENTATION.md](./INTL_IMPLEMENTATION.md#-adding-new-languages)
 
 ## 🤝 Contribuindo
 

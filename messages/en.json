@@ -1,0 +1,434 @@
+{
+  "HomePage": {
+    "title": "desmotiva.dev",
+    "subtitle": "your daily dose of demotivation, before the daily.",
+    "phrasesCount": "100+ phrases and counting",
+    "generateButton": "Get your demotivational quote",
+    "copyButton": "Copy",
+    "copiedButton": "Copied!",
+    "shareWhatsApp": "WhatsApp",
+    "shareTwitter": "Twitter",
+    "shareLinkedIn": "LinkedIn",
+    "shareHashtag": "use the hashtag #desmotivadev, let's get trending!",
+    "footer": {
+      "about": "About",
+      "blog": "Blog",
+      "resources": "Resources",
+      "faq": "FAQ",
+      "privacy": "Privacy",
+      "madeWith": "Made with 💔 by",
+      "subtitle": "(for developers who need a reality check)"
+    }
+  },
+  "Metadata": {
+    "title": "Desmotiva Dev - Your daily dose of demotivation for developers",
+    "description": "Get hilarious demotivational quotes about programming, software development, and tech careers. The site every developer needs for a daily reality check.",
+    "keywords": "demotivation, developer, programmer, funny quotes, tech humor, programming, development, tech career, programming memes, developer jokes, reality check, daily, squad, tech humor, bad code, bugs, pull request, git, javascript, python, react, node",
+    "ogTitle": "Desmotiva Dev - Your daily dose of demotivation for developers",
+    "ogDescription": "Hilarious demotivational quotes about programming and development. The site every dev needs for a reality check.",
+    "ogImageAlt": "Desmotiva Dev - Humor for developers",
+    "twitterTitle": "Desmotiva Dev - Your daily dose of demotivation for developers",
+    "twitterDescription": "Hilarious demotivational quotes about programming and development. The site every dev needs for a reality check.",
+    "structuredData": {
+      "name": "Desmotiva Dev",
+      "description": "Your daily dose of demotivation for developers",
+      "mainEntityName": "Demotivational Quotes for Developers",
+      "mainEntityDescription": "Collection of funny and demotivational quotes about programming, software development, and tech careers"
+    }
+  },
+  "AboutPage": {
+    "title": "About Desmotiva Dev",
+    "subtitle": "The story behind your daily reality check",
+    "metaDescription": "Learn about Desmotiva Dev, the project that brings humor and reality to developers. Discover our mission and why healthy demotivation matters.",
+    "backButton": "Back to Home",
+    "origin": {
+      "title": "How It All Started",
+      "paragraph1": "Desmotiva Dev was born from a real need: to bring a bit of humor and reality to developers' daily lives. In a world where we're constantly bombarded with stories of instant success, billion-dollar startups, and developers who learn 5 languages in a weekend, we needed something different.",
+      "paragraph2": "Created by @deveprogramar, the project started as a way to share the common frustrations every developer faces: inexplicable bugs, impossible legacy code, endless meetings, and that colleague who always breaks the build on Friday at 6pm.",
+      "paragraph3": "What started as a few funny phrases shared among friends quickly transformed into a community of developers who found comfort in knowing they're not alone in their daily struggles with code."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "paragraph1": "Our mission is simple: to provide a moment of lightness and identification for developers around the world. We believe humor is a powerful tool for dealing with the stress and pressures of a tech career.",
+      "paragraph2": "We're not here to actually demotivate anyone - quite the opposite. We want to create a space where developers can laugh at the absurd situations we face, recognize that we all go through difficulties, and ultimately feel part of a community that understands.",
+      "quote": "Sometimes, the best motivation comes from recognizing we're all in the same struggle."
+    },
+    "why": {
+      "title": "Why It Matters",
+      "paragraph1": "Tech culture often promotes an unrealistic image of perfection: developers who never make mistakes, code that always works on the first try, and careers that only go up. This constant pressure can lead to burnout, impostor syndrome, and anxiety.",
+      "paragraph2": "Desmotiva Dev offers a necessary counterpoint. By laughing at our common failures and frustrations, we create a healthier and more realistic environment. Benefits include:",
+      "benefit1": "Stress reduction through humor",
+      "benefit2": "Sense of belonging to a community",
+      "benefit3": "More realistic perspective on tech careers",
+      "benefit4": "Reminders that making mistakes is human and part of the process"
+    },
+    "creator": {
+      "title": "Who's Behind It",
+      "paragraph1": "Desmotiva Dev is maintained by @deveprogramar, a developer who, like you, has been through all the situations described in the phrases (and probably some worse ones). With years of experience in software development, he deeply understands the joys and frustrations of the profession.",
+      "paragraph2": "The project is a love letter to all developers who have ever felt lost, frustrated, or questioned their career choices at 3am while debugging an impossible error."
+    },
+    "community": {
+      "title": "Our Community",
+      "paragraph1": "What makes Desmotiva Dev special is the incredible community that has formed around the project. Thousands of developers share the phrases daily, tag their coworkers, and create their own memes based on the content.",
+      "paragraph2": "Whether you're a junior developer struggling with your first project or a senior tired of explaining what Git is for the thousandth time, there's a place for you here. Everyone is welcome to laugh, share, and relate.",
+      "contribute": "Want to contribute your own demotivational phrases? Contact us on Twitter!"
+    }
+  },
+  "BlogPage": {
+    "title": "Blog",
+    "subtitle": "Articles, insights, and more demotivation for developers",
+    "metaDescription": "Read articles about software development, tech careers, programming humor, and tips for dealing with a developer's daily life.",
+    "backButton": "Back to Home",
+    "readMore": "Read more",
+    "post1": {
+      "title": "10 Signs You Need a Dose of Demotivation",
+      "excerpt": "Feeling too confident in your code? Think you've finally mastered that technology? Watch out! These are classic signs you need a reality check. Discover the 10 unmistakable signs it's time to visit Desmotiva Dev.",
+      "date": "January 15, 2024",
+      "readTime": "5 min read",
+      "category": "Humor"
+    },
+    "post2": {
+      "title": "Anatomy of a Production Bug at 6pm on Friday",
+      "excerpt": "Every developer knows this moment: it's 5:55pm on Friday, you're about to log out, and then... BOOM! A critical bug in production. Let's explore the complete anatomy of this recurring nightmare and how to survive it (spoiler: you won't).",
+      "date": "January 10, 2024",
+      "readTime": "7 min read",
+      "category": "Career"
+    },
+    "post3": {
+      "title": "Git Commit Messages: A Story of Desperation",
+      "excerpt": "From 'fix' to 'IT WORKS DAMMIT' - an epic journey through the most desperate commit messages in software development history. Includes real examples (anonymized to protect the guilty) and tips on how NOT to do it.",
+      "date": "January 5, 2024",
+      "readTime": "6 min read",
+      "category": "Development"
+    },
+    "post4": {
+      "title": "How to Survive a 2-Hour Daily",
+      "excerpt": "The daily should last 15 minutes. YOUR daily lasts 2 hours. In this complete guide, we explore survival strategies, meditation techniques during endless meetings, and how to pretend you're paying attention while mentally you're already debugging that error.",
+      "date": "January 1, 2024",
+      "readTime": "8 min read",
+      "category": "Productivity"
+    },
+    "featured": {
+      "title": "Featured Content",
+      "item1": {
+        "title": "The Definitive Code Review Guide",
+        "description": "Learn the art of reviewing code without making enemies (or at least try). Practical tips for giving and receiving feedback constructively."
+      },
+      "item2": {
+        "title": "Impostor Syndrome: You're Not Alone",
+        "description": "Every developer has felt like a fraud at some point. Let's talk about it honestly and without judgment."
+      },
+      "item3": {
+        "title": "Stack Overflow: Love and Hate",
+        "description": "The complicated relationship every dev has with Stack Overflow. From savior of the nation to source of infinite frustration."
+      }
+    },
+    "newsletter": {
+      "title": "Get Weekly Demotivation",
+      "description": "Subscribe to receive the best demotivational phrases, articles, and memes directly in your email. We promise not to spam (much).",
+      "placeholder": "your@email.com",
+      "button": "Subscribe"
+    }
+  },
+  "ResourcesPage": {
+    "title": "Resources for Developers",
+    "subtitle": "Tools, platforms, and useful resources for your tech journey",
+    "metaDescription": "Discover valuable resources for developers: learning platforms, essential tools, active communities, recommended books, and technology podcasts.",
+    "backButton": "Back to Home",
+    "learning": {
+      "title": "Learning Platforms",
+      "item1": {
+        "name": "freeCodeCamp",
+        "description": "Free platform with complete web development courses, from basics to advanced topics. Includes certifications and practical projects to build your portfolio."
+      },
+      "item2": {
+        "name": "The Odin Project",
+        "description": "Complete and free curriculum to learn full-stack web development. Focused on practical projects and building real skills the market looks for."
+      },
+      "item3": {
+        "name": "Codecademy",
+        "description": "Learn programming interactively with practical exercises. Offers courses in various languages and technologies, from basic to advanced."
+      }
+    },
+    "tools": {
+      "title": "Essential Tools",
+      "item1": {
+        "name": "Visual Studio Code",
+        "description": "The most popular code editor among developers. Free, extensible, and with support for virtually all programming languages. Thousands of extensions available."
+      },
+      "item2": {
+        "name": "GitHub",
+        "description": "Essential platform for code versioning and collaboration. Host your projects, contribute to open source, and build your professional portfolio."
+      },
+      "item3": {
+        "name": "Postman",
+        "description": "Indispensable tool for testing and documenting APIs. Facilitates web service development and debugging with intuitive interface and advanced features."
+      }
+    },
+    "communities": {
+      "title": "Communities and Forums",
+      "item1": {
+        "name": "Stack Overflow",
+        "description": "The largest Q&A community for developers. Millions of solutions to programming problems in all languages and frameworks."
+      },
+      "item2": {
+        "name": "Dev.to",
+        "description": "Vibrant community of developers sharing articles, tutorials, and experiences. Great place to learn and connect with other devs."
+      },
+      "item3": {
+        "name": "Reddit - r/programming",
+        "description": "Active subreddit with discussions about programming, tech industry news, and resource sharing. Engaged and diverse community."
+      }
+    },
+    "books": {
+      "title": "Recommended Books",
+      "item1": {
+        "name": "Clean Code - Robert C. Martin",
+        "description": "Essential guide on how to write clean, readable, and maintainable code. Must-read for every developer who wants to improve their skills."
+      },
+      "item2": {
+        "name": "The Pragmatic Programmer - Hunt & Thomas",
+        "description": "Practical and timeless advice about software development. Covers everything from coding techniques to tech career management."
+      },
+      "item3": {
+        "name": "You Don't Know JS - Kyle Simpson",
+        "description": "Book series that dives deep into JavaScript concepts. Perfect for those who want to truly understand the language beyond the surface."
+      }
+    },
+    "podcasts": {
+      "title": "Technology Podcasts",
+      "item1": {
+        "name": "Syntax.fm",
+        "description": "Podcast about web development with Wes Bos and Scott Tolinski. Episodes about JavaScript, CSS, modern frameworks, and tech careers."
+      },
+      "item2": {
+        "name": "Software Engineering Daily",
+        "description": "Daily interviews with software engineers about technologies, architecture, and industry trends. High-quality technical content."
+      },
+      "item3": {
+        "name": "The Changelog",
+        "description": "Conversations with creators and maintainers of open source projects. Fascinating stories about the software we use every day."
+      }
+    }
+  },
+  "FAQPage": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about Desmotiva Dev",
+    "backButton": "Back to Home",
+    "q1": {
+      "question": "What is Desmotiva Dev?",
+      "answer": "Desmotiva Dev is a humor project aimed at developers and tech professionals. We offer funny demotivational phrases that reflect the real situations and frustrations of daily programming work. Our goal is to bring lightness and identification through humor, creating a community where developers can laugh at the common difficulties of the profession."
+    },
+    "q2": {
+      "question": "Are the phrases really meant to demotivate?",
+      "answer": "No! Despite the name, the goal is not to demotivate anyone. Actually, it's the opposite: by laughing at the absurd situations and common frustrations we all face, we create a sense of community and belonging. Humor is a healthy way to deal with the stress and pressure of a tech career. Think of it as a well-humored 'reality check'."
+    },
+    "q3": {
+      "question": "How can I use the phrases?",
+      "answer": "You can freely use the phrases to share with friends, coworkers, or on social media. Just click the 'Generate Phrase' button to receive a random phrase, then you can copy or share directly on WhatsApp, Twitter, or LinkedIn. We only ask that when sharing, you mention Desmotiva Dev or use the hashtag #desmotivadev to help more people discover the project."
+    },
+    "q4": {
+      "question": "Can I contribute my own phrases?",
+      "answer": "Yes! We love receiving contributions from the community. If you have a funny demotivational phrase about programming or development situations, contact us through Twitter (@deveprogramar). We evaluate all suggestions and, if approved, they can be added to the phrase generator with proper credits."
+    },
+    "q5": {
+      "question": "Is the site free?",
+      "answer": "Yes, Desmotiva Dev is completely free to use. We don't charge anything and never will. The site is maintained through Google AdSense ads, which help us cover hosting and maintenance costs. Our goal is to keep the project accessible to all developers."
+    },
+    "q6": {
+      "question": "Do you have an API?",
+      "answer": "We currently don't have a public API available, but it's something we're considering for the future. If you're interested in integrating Desmotiva Dev phrases into your project, contact us to discuss possibilities."
+    },
+    "q7": {
+      "question": "How can I report a problem or bug?",
+      "answer": "If you found a technical problem on the site or have improvement suggestions, please contact us through Twitter (@deveprogramar). We also accept issues on GitHub if the repository is public. We highly value community feedback and constantly work to improve the experience."
+    },
+    "q8": {
+      "question": "Can I use the phrases commercially?",
+      "answer": "The phrases are created for personal use and social media sharing. For commercial use (such as in products, merchandising, or commercial publications), please contact us first to discuss terms and obtain proper authorization."
+    },
+    "q9": {
+      "question": "Do you have presence on other social networks?",
+      "answer": "Currently, our main presence is on Twitter through the @deveprogramar account. That's where we share updates, new phrases, and interact with the community. We're considering expanding to other platforms in the future, so stay tuned!"
+    },
+    "q10": {
+      "question": "How often are new phrases added?",
+      "answer": "We're constantly working to add new phrases to the database. We currently have over 75 phrases and add new ones regularly, especially when we receive good contributions from the community. Our goal is to keep the content always fresh and relevant."
+    },
+    "q11": {
+      "question": "Does the site collect my personal data?",
+      "answer": "We don't collect personally identifiable information. We use Google Analytics to understand how visitors use the site (anonymous data like pages visited, time spent, etc.) and Google AdSense to display ads. For more details, see our complete Privacy Policy."
+    },
+    "q12": {
+      "question": "Can I suggest improvements to the site?",
+      "answer": "Absolutely! We love hearing suggestions from the community. If you have ideas for new features, design improvements, or any other suggestion, contact us on Twitter. All suggestions are welcome and carefully considered."
+    },
+    "contact": {
+      "title": "Still have questions?",
+      "description": "If your question wasn't answered here, contact us directly:",
+      "twitter": "Talk on Twitter"
+    }
+  },
+  "PrivacyPage": {
+    "title": "Privacy Policy",
+    "metaDescription": "Desmotiva Dev Privacy Policy. Learn how we collect, use, and protect your data when using our site.",
+    "lastUpdated": "Last updated: January 2024",
+    "backButton": "Back to Home",
+    "intro": {
+      "title": "Introduction",
+      "paragraph1": "Welcome to Desmotiva Dev's Privacy Policy. This policy describes how we collect, use, and protect your information when you visit and use our site.",
+      "paragraph2": "By using Desmotiva Dev, you agree to the collection and use of information in accordance with this policy. We take your privacy seriously and are committed to protecting your personal data."
+    },
+    "collection": {
+      "title": "Information We Collect",
+      "intro": "We collect different types of information to provide and improve our service:",
+      "automatic": {
+        "title": "Automatically Collected Information",
+        "description": "When you visit our site, we automatically collect certain information about your device, including:",
+        "item1": "IP address and approximate geographic location",
+        "item2": "Browser type and version",
+        "item3": "Pages visited and time spent on each page",
+        "item4": "Date and time of access"
+      },
+      "cookies": {
+        "title": "Cookies and Similar Technologies",
+        "description": "We use cookies and similar technologies to track activities on our site and store certain information. Cookies are files with a small amount of data that may include an anonymous unique identifier."
+      }
+    },
+    "usage": {
+      "title": "How We Use Your Information",
+      "intro": "We use the collected information for various purposes:",
+      "item1": "Provide and maintain our service",
+      "item2": "Analyze how our site is used to improve user experience",
+      "item3": "Detect, prevent, and resolve technical problems",
+      "item4": "Personalize ads through Google AdSense",
+      "item5": "Comply with legal and regulatory obligations"
+    },
+    "analytics": {
+      "title": "Google Analytics",
+      "paragraph1": "We use Google Analytics to understand how visitors interact with our site. Google Analytics collects information such as visit frequency, pages visited, and traffic source sites.",
+      "paragraph2": "This information is used to compile reports and help us improve the site. Google Analytics only collects the IP address assigned to you on the date you visit the site, not your name or other identifying information.",
+      "learnMore": "For more information about Google's privacy practices, visit:",
+      "link": "Google Privacy Policy"
+    },
+    "adsense": {
+      "title": "Google AdSense",
+      "paragraph1": "We use Google AdSense to display ads on our site. Google AdSense uses cookies to serve ads based on previous visits to this site or other sites.",
+      "paragraph2": "The use of advertising cookies allows Google and its partners to serve ads based on your visits to this site and/or other sites on the Internet. Collected data includes:",
+      "item1": "Pages visited and ads viewed",
+      "item2": "Interactions with ads",
+      "item3": "Demographic and interest information (when available)",
+      "optOut": "You can disable personalized ads by visiting:",
+      "optOutLink": "Google Ads Settings"
+    },
+    "sharing": {
+      "title": "Data Sharing",
+      "paragraph1": "We do not sell, trade, or transfer your personal information to third parties. This does not include trusted partners who help us operate our site, as long as they agree to keep this information confidential. We may share information when:",
+      "item1": "Necessary to comply with the law or respond to legal processes",
+      "item2": "To protect our rights, property, or safety",
+      "item3": "With service providers who help us operate the site (such as Google Analytics and AdSense)"
+    },
+    "rights": {
+      "title": "Your Rights",
+      "intro": "You have rights regarding your personal data, including:",
+      "item1": "Right to access the data we have about you",
+      "item2": "Right to request correction of incorrect data",
+      "item3": "Right to request deletion of your data",
+      "item4": "Right to opt out of marketing communications"
+    },
+    "security": {
+      "title": "Data Security",
+      "paragraph1": "The security of your data is important to us, but remember that no method of transmission over the Internet or electronic storage method is 100% secure. While we strive to use commercially acceptable means to protect your personal data, we cannot guarantee its absolute security."
+    },
+    "children": {
+      "title": "Children's Privacy",
+      "paragraph1": "Our service is not directed to children under 13. We do not intentionally collect personally identifiable information from children under 13. If you are a parent or guardian and are aware that your child has provided us with personal data, please contact us."
+    },
+    "changes": {
+      "title": "Changes to This Policy",
+      "paragraph1": "We may update our Privacy Policy periodically. We will notify you of any changes by posting the new Privacy Policy on this page and updating the 'last updated' date. We recommend that you review this Privacy Policy periodically for any changes."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "paragraph1": "If you have any questions about this Privacy Policy, contact us:",
+      "twitter": "Contact via Twitter"
+    }
+  },
+  "phrases": [
+    "Your code is so slow that the user already retired waiting for the screen to load",
+    "You're the reason there's a 'best practices' meeting every week (nobody can take it anymore bro)",
+    "Your merge conflict has a merge conflict, congratulations",
+    "Your frontend is so good it looks like the old MSN screen (send this to your favorite frontend dev)",
+    "Apparently you're the reason QA is always discouraged",
+    "Send this to the arthropod who names variables like 'x1', 'x2', 'final', 'finalFinal', 'finalNow'",
+    "Your README.md only has the project title and nothing else since 2020 (it was still pandemic)",
+    "You're that dev who makes 47 commits with the message 'fix', 'fix', what are you fixing so much?",
+    "You're so top that your nickname in the squad is 'the famous build breaker'",
+    "If you decide to fix a bug, you'll definitely create a new bug worse than the previous one",
+    "Your code has so many workarounds it became a tourist attraction",
+    "You create a Class with 500 lines and call it optimization lol",
+    "Your code runs perfectly... only on your computer. And if you try to record the screen it still crashes.",
+    "Your unit test tests if 2+2 is 4 and still fails",
+    "Your nickname is: 'Everything's ready, I just need to test it'",
+    "Your code has more nested ifs than Russian dolls",
+    "Your code is so bad it was used as an example of 'what we DON'T do here at the company...'",
+    "You're that dev who comments code instead of deleting it (share this with that brainless person)",
+    "You use SELECT * in production and think it's normal and complain about AWS billing",
+    "Your code has so many 'console.log' it looks like a personal diary (I don't know how it passed code review)",
+    "You're the reason 'npm install' takes 40 minutes lol (and my machine has 16GB of RAM)",
+    "Your code throws an error on line 203 and the code only has 100 lines dude",
+    "You force push to main and wonder why nobody invites you to the company happy hour",
+    "You write SQL injection as a gift to the hacker, the guy doesn't even need to try",
+    "Your code is so coupled it looks like a toxic couple lol",
+    "In the interview they asked you to introduce yourself and you opened LinkedIn to remember who you are lol",
+    "Your resume has 5 pages and 4 are courses you never finished (detail, all YouTube courses)",
+    "In the technical test you delivered code that doesn't even compile and had the nerve to ask the recruiter for feedback lol that's too much nerve",
+    "Your code has so many global variables it's looking like communism, everything belongs to the state",
+    "You're that dev who reinvents the wheel... but square",
+    "Are you the famous node_modules versioner?",
+    "It's because of you they're scraping ChatGPT API keys straight from Github lol",
+    "You're that dev who uses regex to validate email and creates an interdimensional portal with so many weird letters",
+    "Are you one of those who does git rebase and prays in 3 different religions?",
+    "It's because of your code like this that they're saying AI will steal our jobs...",
+    "You applied for a senior position with a barbershop landing page portfolio lol",
+    "Your code is so legacy that archaeologists use it to study lol",
+    "You're the only dev who can make CSS break the back-end, congratulations!",
+    "You're the reason they want to do the daily standing up",
+    "You think agile methodology is for you to deliver bad code more quickly",
+    "You're that dev who says in the daily: 'no blockers' but hasn't even read the Jira task",
+    "Apparently you're living proof that a 3-month bootcamp doesn't work miracles",
+    "In the interview you said your strength is solving problems, but you're struggling to use Teams lol",
+    "Your code is so horrible that the Junior asked to review your Pull Request",
+    "You look like that dev who when fired, the team's productivity increases by 300%",
+    "Your portfolio is so weak that not even for a $150/month freelance gig they call you",
+    "You're the reason the company has 'mandatory code review with 3 approvals'",
+    "You're the reason the Tech Lead had burnout",
+    "Send this to the famous sprint holder, if it falls on him it's guaranteed delay",
+    "Your code breaks in production more frequently than 👆",
+    "Your PR has more comments of 'does this make sense?' than approved lines",
+    "You're the type of dev who does pair programming and the other dev quits without notice",
+    "Your code causes so many problems they created a bot just to automatically revert your commits",
+    "You're so bad that when you ask for help on Discord, they mute you",
+    "You're the dev who makes people think 'well, maybe that waiter job wasn't so bad'",
+    "You're that dev who makes Linus Torvalds seem polite and patient",
+    "Your Git has more abandoned branches than stray dogs on the street",
+    "You committed on Friday at 6pm and ruined EVERYONE's weekend, you know?",
+    "Your sprint ends with more cards in 'To Do' than when it started lol",
+    "In the daily you're always 'just need to test' but it's been 2 sprints dude, until now???",
+    "You're the reason Github has a block for direct push to main lol",
+    "Are you the dev who opens 15 issues and doesn't solve any?",
+    "Your code has more nested callbacks than the Inception movie",
+    "Approve my Pull Request there buddy... it's been 3 days",
+    "Are you the dev who puts password 'admin123' and thinks it's secure?",
+    "Your SQL query has more JOINs than family relationships in a small town",
+    "Are you the famous one who 'throws HTTP 500 for every error?'",
+    "Your PR has 3000 changed lines and the description is just 'fix bug'",
+    "Your .env has been committed to the repo since the beginning of the project lol I forgot to warn you",
+    "The other day I saw you resolve a merge conflict accepting 'incoming' on everything, remember?",
+    "Your infrastructure is like a house of cards: changed a comma and everything falls",
+    "Weren't you the one who thought 'CI/CD was a K-Pop band?'",
+    "Your monorepo became chaos because you didn't understand the concept",
+    "You use Promise inside Promise inside Callback like a matryoshka from hell",
+    "Your Postman collection has more saved requests than automated tests in the project"
+  ]
+}
