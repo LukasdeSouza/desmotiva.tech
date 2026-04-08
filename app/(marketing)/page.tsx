@@ -5,16 +5,18 @@ import { phrases } from '../utils/mocks';
 import { sendGAEvent } from '@next/third-parties/google';
 import Image from 'next/image';
 import AdsterraAd from '../components/AdSense';
+import MemeGenerator from '../components/MemeGenerator';
 
 export default function Home() {
     const [currentPhrase, setCurrentPhrase] = useState<string>('');
     const [isVisible, setIsVisible] = useState(false);
     const [copied, setCopied] = useState(false);
     const [animationKey, setAnimationKey] = useState(0);
+    const [showMemeGenerator, setShowMemeGenerator] = useState(false);
 
     const getRandomPhrase = () => {
         const randomIndex = Math.floor(Math.random() * phrases.length);
-        const newPhrase = phrases[randomIndex];
+        const newPhrase = phrases[randomIndex].text;
 
         if (isVisible) {
             // Se já tem uma frase visível, anima a troca
@@ -221,6 +223,22 @@ export default function Home() {
                                     </button>
                                 </div>
                                 <small className='text-slate-400 mt-1'>use a hashtag #desmotivadev, bora pegar top 1 fi!</small>
+
+                                <button
+                                    onClick={() => setShowMemeGenerator(!showMemeGenerator)}
+                                    className="mt-4 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-colors flex items-center gap-2"
+                                >
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 12h.01M12 6h.01M18 12h.01" />
+                                    </svg>
+                                    {showMemeGenerator ? 'Fechar' : 'Gerar Meme'}
+                                </button>
+
+                                {showMemeGenerator && isVisible && (
+                                    <div className="mt-6">
+                                        <MemeGenerator phrase={currentPhrase} showControls={true} />
+                                    </div>
+                                )}
 
                                 <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-800">
                                     <AdsterraAd

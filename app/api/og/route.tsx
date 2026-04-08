@@ -6,15 +6,11 @@ export const runtime = 'edge';
 export async function GET(req: NextRequest) {
     try {
         const { searchParams } = new URL(req.url);
+        const phrase = searchParams.get('phrase') || 'Sua dose diária de realidade';
+        const category = searchParams.get('category') || '';
 
-        // Get phrase from query params
-        const phrase = searchParams.get('phrase');
+        const decodedPhrase = decodeURIComponent(phrase);
 
-        if (!phrase) {
-            return new Response('Missing phrase', { status: 400 });
-        }
-
-        // You can customize the look here
         return new ImageResponse(
             (
                 <div
@@ -25,94 +21,93 @@ export async function GET(req: NextRequest) {
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        backgroundColor: '#000',
-                        backgroundImage: 'radial-gradient(circle at 25% 25%, #111 0%, #000 100%)',
+                        backgroundColor: '#0a0a0a',
+                        backgroundImage: 'radial-gradient(ellipse at 50% 0%, #1a1a2e 0%, #0a0a0a 70%)',
                         padding: '80px',
                         position: 'relative',
                     }}
                 >
-                    {/* Watermark Logo */}
-                    <div
-                        style={{
-                            position: 'absolute',
-                            top: '40px',
-                            left: '40px',
-                            display: 'flex',
-                            alignItems: 'center',
-                        }}
-                    >
-                        <img
-                            src="https://desmotiva.tech/logo-rosto-desmotiva.dev.png"
-                            width="40"
-                            height="40"
-                            style={{ borderRadius: '8px' }}
-                        />
-                        <span
+                    {category && (
+                        <div
                             style={{
-                                marginLeft: '12px',
-                                fontSize: '24px',
-                                fontWeight: 'bold',
+                                position: 'absolute',
+                                top: '40px',
+                                right: '40px',
+                                backgroundColor: '#3b82f6',
                                 color: '#fff',
-                                letterSpacing: '-0.02em',
+                                padding: '8px 20px',
+                                borderRadius: '20px',
+                                fontSize: '18px',
+                                fontWeight: 600,
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.05em',
                             }}
                         >
-                            desmotiva.dev
-                        </span>
-                    </div>
+                            {category}
+                        </div>
+                    )}
 
-                    {/* Quote Mark */}
                     <div
                         style={{
-                            fontSize: '120px',
-                            color: '#333',
+                            fontSize: '160px',
+                            color: '#1e3a5f',
                             position: 'absolute',
-                            top: '120px',
-                            left: '80px',
-                            opacity: 0.5,
-                            fontFamily: 'serif',
+                            top: '80px',
+                            left: '60px',
+                            fontFamily: 'Georgia, serif',
+                            lineHeight: 1,
                         }}
                     >
-                        “
+                        "
                     </div>
 
-                    {/* Main Phrase */}
                     <div
                         style={{
                             display: 'flex',
                             flexDirection: 'column',
                             textAlign: 'center',
                             width: '100%',
-                            padding: '0 40px',
+                            padding: '40px 20px',
                         }}
                     >
                         <h1
                             style={{
-                                fontSize: phrase.length > 100 ? '48px' : '64px',
+                                fontSize: decodedPhrase.length > 80 ? '52px' : decodedPhrase.length > 50 ? '60px' : '72px',
                                 fontWeight: 700,
-                                color: '#fff',
-                                lineHeight: 1.2,
+                                color: '#ffffff',
+                                lineHeight: 1.3,
                                 margin: 0,
                                 padding: 0,
                                 wordBreak: 'break-word',
-                                filter: 'drop-shadow(0 4px 4px rgba(0,0,0,0.5))',
+                                fontFamily: 'system-ui, -apple-system, sans-serif',
                             }}
                         >
-                            {phrase}
+                            {decodedPhrase}
                         </h1>
                     </div>
 
-                    {/* URL Footer */}
+                    <div
+                        style={{
+                            marginTop: '40px',
+                            fontSize: '24px',
+                            color: '#3b82f6',
+                            fontWeight: 500,
+                        }}
+                    >
+                        #desmotivadev
+                    </div>
+
                     <div
                         style={{
                             position: 'absolute',
                             bottom: '40px',
-                            fontSize: '20px',
+                            fontSize: '18px',
                             color: '#666',
-                            letterSpacing: '0.1em',
+                            letterSpacing: '0.15em',
                             textTransform: 'uppercase',
                         }}
                     >
-                        desmotiva.dev • sua dose de realidade
+                        desmotiva.dev
                     </div>
                 </div>
             ),
@@ -121,8 +116,8 @@ export async function GET(req: NextRequest) {
                 height: 630,
             },
         );
-    } catch (e: any) {
-        console.log(`${e.message}`);
+    } catch (e: unknown) {
+        console.error(`OG Image error: ${e}`);
         return new Response(`Failed to generate the image`, {
             status: 500,
         });

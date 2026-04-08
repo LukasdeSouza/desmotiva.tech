@@ -47,7 +47,11 @@ export default function AdsterraAd({
     <div className={className} style={style}>
       {adType === 'native-banner' && (
         <>
-          <script async="async" data-cfasync="false" src={nativeBannerScriptUrl} />
+          <script 
+            async={true} 
+            data-cfasync="false" 
+            src={nativeBannerScriptUrl} 
+          />
           <div id={`container-${adId}`} />
         </>
       )}
