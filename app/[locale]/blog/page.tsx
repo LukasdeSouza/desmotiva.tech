@@ -2,12 +2,12 @@ import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import AdSense from '../../components/AdSense';
+import AdsterraAd from '../../components/AdSense';
 
-export async function generateMetadata({ 
-  params 
-}: { 
-  params: Promise<{ locale: string }> 
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'BlogPage' });
@@ -54,6 +54,30 @@ export default function BlogPage() {
       readTime: t('post4.readTime'),
       category: t('post4.category'),
     },
+    {
+      id: 5,
+      title: t('post5.title'),
+      excerpt: t('post5.excerpt'),
+      date: t('post5.date'),
+      readTime: t('post5.readTime'),
+      category: t('post5.category'),
+    },
+    {
+      id: 6,
+      title: t('post6.title'),
+      excerpt: t('post6.excerpt'),
+      date: t('post6.date'),
+      readTime: t('post6.readTime'),
+      category: t('post6.category'),
+    },
+    {
+      id: 7,
+      title: t('post7.title'),
+      excerpt: t('post7.excerpt'),
+      date: t('post7.date'),
+      readTime: t('post7.readTime'),
+      category: t('post7.category'),
+    },
   ];
 
   return (
@@ -72,65 +96,70 @@ export default function BlogPage() {
         {/* Blog Posts Grid */}
         <div className="max-w-6xl w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {blogPosts.map((post, index) => (
-              <article 
+            {blogPosts.map((post) => (
+              <Link
+                href={`/blog/${post.id}`}
                 key={post.id}
-                className="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden hover:border-gray-700 transition-all duration-200 hover:transform hover:scale-[1.02]"
+                className="block group"
               >
-                <div className="p-6 sm:p-8">
-                  {/* Category Badge */}
-                  <div className="mb-4">
-                    <span className="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">
-                      {post.category}
-                    </span>
-                  </div>
+                <article
+                  className="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden group-hover:border-gray-600 transition-all duration-200 group-hover:transform group-hover:scale-[1.02] h-full flex flex-col"
+                >
+                  <div className="p-6 sm:p-8 flex-1 flex flex-col">
+                    {/* Category Badge */}
+                    <div className="mb-4">
+                      <span className="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">
+                        {post.category}
+                      </span>
+                    </div>
 
-                  {/* Title */}
-                  <h2 className="text-2xl font-bold mb-3 text-white hover:text-gray-300 transition-colors">
-                    {post.title}
-                  </h2>
+                    {/* Title */}
+                    <h2 className="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">
+                      {post.title}
+                    </h2>
 
-                  {/* Meta Info */}
-                  <div className="flex items-center gap-4 text-sm text-gray-400 mb-4">
-                    <span className="flex items-center gap-1">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    {/* Meta Info */}
+                    <div className="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                      <span className="flex items-center gap-1">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        {post.date}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        {post.readTime}
+                      </span>
+                    </div>
+
+                    {/* Excerpt */}
+                    <p className="text-gray-300 mb-6 leading-relaxed flex-1">
+                      {post.excerpt}
+                    </p>
+
+                    {/* Read More Button */}
+                    <div className="text-blue-400 font-semibold flex items-center gap-2 mt-auto">
+                      {t('readMore')}
+                      <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
-                      {post.date}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      {post.readTime}
-                    </span>
+                    </div>
                   </div>
-
-                  {/* Excerpt */}
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    {post.excerpt}
-                  </p>
-
-                  {/* Read More Button */}
-                  <div className="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-2 cursor-pointer">
-                    {t('readMore')}
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </article>
+                </article>
+              </Link>
             ))}
           </div>
 
-          {/* AdSense - Middle */}
-          <div className="my-12">
-            <AdSense 
-              adSlot="auto"
-              adFormat="rectangle"
-              style={{ display: 'block', textAlign: 'center' }}
-            />
-          </div>
+           {/* Native Banner - Middle */}
+           <div className="my-12">
+             <AdsterraAd
+               adType="native-banner"
+               adId="ed70a6f25111703ef2de856b55878c9c"
+               style={{ display: 'block', textAlign: 'center' }}
+             />
+           </div>
 
           {/* Featured Content Section */}
           <section className="bg-gray-900 border border-gray-800 rounded-lg p-6 sm:p-8 mb-12">
@@ -158,8 +187,8 @@ export default function BlogPage() {
               {t('newsletter.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input 
-                type="email" 
+              <input
+                type="email"
                 placeholder={t('newsletter.placeholder')}
                 className="flex-1 px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
               />
@@ -169,20 +198,19 @@ export default function BlogPage() {
             </div>
           </section>
 
-          {/* AdSense - Bottom */}
-          <div className="my-12">
-            <AdSense 
-              adSlot="auto"
-              adFormat="auto"
-              style={{ display: 'block', textAlign: 'center' }}
-            />
-          </div>
+           {/* Popunder - Bottom */}
+           <div className="my-12">
+             <AdsterraAd
+               adType="popunder"
+               adId="39ad003a4c4550d552b7bb09f385cafb"
+             />
+           </div>
         </div>
 
         {/* Back Button */}
         <div className="mt-8">
-          <a 
-            href="/" 
+          <a
+            href="/"
             className="px-8 py-4 bg-white text-black rounded-lg hover:bg-gray-200 transition-all duration-200 inline-block font-semibold"
           >
             ← {t('backButton')}

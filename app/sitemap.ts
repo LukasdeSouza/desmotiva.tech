@@ -3,22 +3,22 @@ import { locales } from '@/i18n/config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://desmotiva.dev';
-  
+
   // Define all routes
   const routes = ['', '/blog', '/sobre', '/recursos', '/contato', '/faq', '/privacy'];
-  
+
   // Define individual blog posts
-  const blogPosts = ['/blog/1', '/blog/2', '/blog/3'];
-  
+  const blogPosts = ['/blog/1', '/blog/2', '/blog/3', '/blog/4'];
+
   // Generate sitemap entries for each locale and route
   const sitemapEntries: MetadataRoute.Sitemap = [];
-  
+
   routes.forEach((route) => {
     locales.forEach((locale) => {
-      const url = locale === 'pt' 
-        ? `${baseUrl}${route}` 
+      const url = locale === 'pt'
+        ? `${baseUrl}${route}`
         : `${baseUrl}/${locale}${route}`;
-      
+
       sitemapEntries.push({
         url,
         lastModified: new Date(),
@@ -33,14 +33,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     });
   });
-  
+
   // Add individual blog posts
   blogPosts.forEach((blogRoute) => {
     locales.forEach((locale) => {
-      const url = locale === 'pt' 
-        ? `${baseUrl}${blogRoute}` 
+      const url = locale === 'pt'
+        ? `${baseUrl}${blogRoute}`
         : `${baseUrl}/${locale}${blogRoute}`;
-      
+
       sitemapEntries.push({
         url,
         lastModified: new Date(),
@@ -55,6 +55,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     });
   });
-  
+
   return sitemapEntries;
 }

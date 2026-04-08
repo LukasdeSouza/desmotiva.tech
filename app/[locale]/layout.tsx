@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google';
+import Script from 'next/script';
 import { Analytics } from "@vercel/analytics/next";
 import { NextIntlClientProvider } from 'next-intl';
+
 import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n/config';
+import Header from '../components/Header';
 import "../globals.css";
 
 const poppins = Poppins({
@@ -15,10 +18,10 @@ const poppins = Poppins({
   subsets: ["latin", "latin-ext"]
 });
 
-export async function generateMetadata({ 
-  params 
-}: { 
-  params: Promise<{ locale: string }> 
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Metadata' });
@@ -89,41 +92,45 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  // Ensure that the incoming `locale` is valid
   if (!locales.includes(locale as any)) {
     notFound();
   }
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
   const messages = await getMessages();
 
   return (
     <html lang={locale}>
       <GoogleAnalytics gaId="G-TVJ6B98YGD" />
       {/* Google AdSense */}
-      <script
+      <Script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2481190522332368"
         crossOrigin="anonymous"
+        strategy="afterInteractive"
       />
-      {/* Auto Ads */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            (adsbygoogle = window.adsbygoogle || []).push({
+      <Script id="adsense-init" strategy="afterInteractive">
+        {`
+          if (!window.adsbygoogle) {
+            window.adsbygoogle = [];
+          }
+          if (!window.adsbygoogle_initialized) {
+            window.adsbygoogle.push({
               google_ad_client: "ca-pub-2481190522332368",
               enable_page_level_ads: true
             });
-          `
-        }}
-      />
+            window.adsbygoogle_initialized = true;
+          }
+        `}
+      </Script>
       <body className={`${poppins.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <Header />
+          <div className="pt-16">
+            {children}
+          </div>
         </NextIntlClientProvider>
       </body>
-      <Analytics/>
+      <Analytics />
     </html>
   );
 }

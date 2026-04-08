@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import AdSense from '../../components/AdSense';
+import AdsterraAd from '../../components/AdSense';
 
 export async function generateMetadata({ 
   params 
@@ -68,11 +68,11 @@ export default function AboutPage() {
             </div>
           </section>
 
-          {/* AdSense - Middle of content */}
+          {/* Native Banner - Middle of content */}
           <div className="my-8">
-            <AdSense 
-              adSlot="auto"
-              adFormat="rectangle"
+            <AdsterraAd 
+              adType="native-banner"
+              adId="ed70a6f25111703ef2de856b55878c9c"
               style={{ display: 'block', textAlign: 'center' }}
             />
           </div>
@@ -126,12 +126,11 @@ export default function AboutPage() {
             </div>
           </section>
 
-          {/* AdSense - Bottom */}
+          {/* Popunder - Bottom */}
           <div className="my-8">
-            <AdSense 
-              adSlot="auto"
-              adFormat="auto"
-              style={{ display: 'block', textAlign: 'center' }}
+            <AdsterraAd 
+              adType="popunder"
+              adId="39ad003a4c4550d552b7bb09f385cafb"
             />
           </div>
         </article>

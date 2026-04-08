@@ -9,6 +9,7 @@
     "shareWhatsApp": "WhatsApp",
     "shareTwitter": "Twitter",
     "shareLinkedIn": "LinkedIn",
+    "shareCard": "Baixar Card",
     "shareHashtag": "use a hashtag #desmotivadev, bora pegar top 1 fi!",
     "footer": {
       "about": "Sobre",
@@ -85,28 +86,56 @@
       "excerpt": "Está se sentindo muito confiante no seu código? Acha que finalmente dominou aquela tecnologia? Cuidado! Esses são sinais clássicos de que você precisa de um reality check.",
       "date": "15 de Janeiro, 2024",
       "readTime": "5 min de leitura",
-      "category": "Humor"
+      "category": "Humor",
+      "content": "## 1. \"Na minha máquina funciona\"\nSe essa frase sai da sua boca mais de 3 vezes por semana, temos um problema. O cliente não vai acessar o site da sua máquina (a menos que você transforme seu laptop num servidor, o que, conhecendo você, é bem capaz).\n\n## 2. Você acha que testes são \"perda de tempo\"\n\"Pra que testar se eu sei o que codifiquei?\" - disse o dev 5 minutos antes de derrubar o banco de produção. Testes não são para provar que você está certo, são para provar que você, invariavelmente, vai estar errado.\n\n## 3. Seu histórico do Google é só Stack Overflow\nNão me leve a mal, todo mundo usa. Mas se você precisa pesquisar \"como declarar variável em Python\" depois de 3 anos de experiência, talvez seja hora de repensar.\n\n## 4. Você acredita no prazo do PM\nAh, a doce inocência. O PM diz \"só um botãozinho\", e você acredita que vai levar 10 minutos. 3 dias depois, você está refatorando a arquitetura inteira porque o botão precisava de uma nova API chumbada.\n\n## 5. Você sonha com código\nIsso não é dedicação, é trauma. Se você acorda suando frio porque sonhou que esqueceu um ponto e vírgula, você precisa de férias (ou terapia).\n\n## 6. \"Vou comentar depois\"\nSpoiler: Você não vai. Ninguém vai. Aquele trecho de código vai ficar lá, obscuro e misterioso, como um hieróglifo egípcio, até o dia em que alguém tentar mexer e amaldiçoar sua descendência.\n\n## 7. Café não faz mais efeito\nSe você toma 1 litro de café e o único efeito é tremedeira na pálpebra, seu corpo já desistiu. Você é movido a ansiedade e prazos estourados agora.\n\n## 8. Git Push Force é seu melhor amigo\nSe resolver conflito pra você significa apagar o trabalho dos outros e impor sua vontade soberana sobre o repositório, você não é um líder, é um ditador de código ruim.\n\n## 9. Você acha que o usuário é burro\nO usuário não é burro, ele é criativo na arte de destruir seu software. Se seu formulário permite digitar data de nascimento no futuro e o sistema quebra, a culpa não é do usuário que nasceu em 2099.\n\n## 10. Você está lendo isso aqui\nSe você parou de codar para ler 10 motivos para se desmotivar, parabéns! Você já aceitou seu destino. Bem-vindo ao clube."
     },
     "post2": {
       "title": "A Anatomia de um Bug de Produção às 18h de Sexta-feira",
       "excerpt": "Todo desenvolvedor conhece esse momento: são 17:55 de sexta-feira, você está prestes a fazer logout, e então... BOOM! Um bug crítico em produção.",
       "date": "10 de Janeiro, 2024",
       "readTime": "7 min de leitura",
-      "category": "Carreira"
+      "category": "Carreira",
+      "content": "## 17:55 - A Falsa Sensação de Segurança\nO sol está se pondo (mentira, você trabalha em um quarto escuro). O Slack está ficando quieto. Você pensa: \"Vou só fazer esse deployzinho rápido, é só uma mudança de cor no botão\".\n\n## 17:58 - O Clique Fatal\n`git push origin master`. O CI/CD roda. Luzes verdes. Você se sente um deus da tecnologia. Nada pode dar errado. Você fecha a tampa do notebook.\n\n## 18:02 - O Telefone Toca\nNão é sua mãe. Não é o iFood. É o CTO. \"O site caiu. Tudo. Até o backup sumiu.\"\n\n## 18:05 - A Negação\n\"Impossível, na minha máquina funcionava!\", você grita para o vazio. Você abre o notebook freneticamente. Erro 500. Erro 500 em tudo.\n\n## 18:30 - O Desespero\nVocê descobre que a \"mudança de cor\" tinha uma dependência cíclica que deletou a tabela de usuários (não pergunte como, você é talentoso nisso). O time inteiro foi convocado. O happy hour foi cancelado.\n\n## 19:45 - A Culpa\nAlguém sugere um rollback. Você tenta. O rollback falha porque a migração do banco não era reversível. Claro que não era.\n\n## 21:00 - A Gambiarra\nSeu sênior, com olheiras profundas, sugere comentar a linha que valida a existência do usuário. \"Só pra subir\", ele diz. Uma lágrima escorre. O sistema volta ao ar, capenga, sangrando, mas vivo.\n\n## 22:15 - A Lição (que não será aprendida)\nVocê promete que nunca mais fará deploy sexta-feira. Você jura pelo seu teclado mecânico. Mas nós sabemos a verdade... Sexta que vem, às 17:55, a adrenalina vai chamar de novo."
     },
     "post3": {
       "title": "Git Commit Messages: Uma História de Desespero",
       "excerpt": "De 'fix' a 'FUNCIONA CARALHO' - uma jornada épica através das mensagens de commit mais desesperadas da história do desenvolvimento de software.",
       "date": "5 de Janeiro, 2024",
       "readTime": "6 min de leitura",
-      "category": "Desenvolvimento"
+      "category": "Desenvolvimento",
+      "content": "## O Início: A Esperança\n`feat: adiciona autenticação de usuário`\nOlha só que profissional. Padrão Conventional Commits. Tudo lindo, organizado.\n\n## O Meio: A Realidade\n`fix: corrige bug no login`\n`fix: agora vai`\n`fix: arrumando o typo`\n`fix: meu deus por que não funciona`\nAqui a sanidade começa a escorrer pelos dedos. Aquele padrão bonitinho? Já era.\n\n## O Fim: O Caos\n`wip`\n`aaaaa`\n`FUNCIONA DESGRAÇA`\n`commit final final mesmo agora vai v2`\n`revert \"revert \"fix: login\"\"`\n\n## A Análise Psiquiátrica via Git Log\nÉ possível traçar o perfil psicológico de um dev apenas lendo seus commits de uma sexta-feira à tarde. Começa com estoicismo e termina em niilismo puro. \n\n## Dica de Ouro\nSe você um dia tiver que fazer `git commit --amend` pela quinta vez, pare. Respire. Vá tomar um café. Ou aceite que seu destino é ter um histórico sujo para sempre. Afinal, \"squash commits\" no final só serve pra esconder a vergonha, e nós sabemos o que você fez."
     },
     "post4": {
       "title": "Como Sobreviver a uma Daily de 2 Horas",
       "excerpt": "A daily deveria durar 15 minutos. A SUA daily dura 2 horas. Neste guia completo, exploramos estratégias de sobrevivência.",
       "date": "1 de Janeiro, 2024",
       "readTime": "8 min de leitura",
-      "category": "Produtividade"
+      "category": "Produtividade",
+      "content": "## 1. A Técnica do \"Estátua\"\nQuando a câmera estiver ligada e você sentir o sono bater, congele. Se alguém perguntar, diga que sua internet travou. Mantenha os olhos abertos, mas a alma pode estar dormindo.\n\n## 2. O Bingo da Daily\nFaça uma cartela mental:\n- \"Alinhamento\"\n- \"Impedimento\"\n- \"Sinergia\"\n- \"Vamos marcar uma pre-daily pra alinhar a daily\"\n- \"Isso é culpa do legado\"\nQuem completar a cartela primeiro ganha o direito de mutar o microfone e chorar.\n\n## 3. A Arte de Falar Nada com Muitas Palavras\nQuando chegar sua vez:\n\"Então, ontem eu tive um blocker técnico na stack da API, que gerou um overhead no throughput do deploy, mas hoje vou atuar na mitigação desse gap pra garantir a entrega do value stream.\"\nTradução: \"Não fiz nada ontem e não vou fazer nada hoje.\"\n\n## 4. O Problema do Microfone\n\"Vocês estão me ouvindo?\" - repita isso 5 vezes. \"Acho que meu mic tá ruim, vou escrever no chat\". Pronto, você ganhou 10 minutos de paz enquanto finge que arruma o som.\n\n## 5. Dissociação Produtiva\nAprenda a fazer cara de concordância enquanto pensa na lista de compras, ou por que o Pato Donald não usa calças mas usa toalha quando sai do banho. O importante é balançar a cabeça afirmativamente a cada 30 segundos."
+    },
+    "post5": {
+      "title": "Por que seu código funciona na sua máquina (e em mais nenhum lugar)",
+      "excerpt": "A frase \"na minha máquina funciona\" é o slogan oficial do desenvolvedor júnior. Vamos descobrir por que o universo conspira contra seu deploy.",
+      "date": "20 de Janeiro, 2024",
+      "readTime": "6 min de leitura",
+      "category": "DevOps",
+      "content": "## O Ambiente Místico\nSua máquina é um ecossistema delicado, cultivado com carinho, onde as versões das bibliotecas foram escolhidas a dedo (por acaso) e as variáveis de ambiente foram hardcoded no coração do sistema operacional. O servidor de produção, por outro lado, é um terreno baldio hostil.\n\n## A Maldição do Localhost\nNo localhost, tudo é perdoado. O banco de dados responde em 0ms, a rede nunca cai e o CORS não existe. É o Jardim do Éden do software. Produção é o mundo real: cruel, lento e cheio de regras de firewall.\n\n## Dependências Fantasmas\nSabe aquela lib que você instalou globalmente em 2019 pra testar um tutorial? Seu projeto depende dela agora. Ninguém sabe, nem você. Mas o servidor de CI/CD sabe. E ele vai falhar o build com um prazer sádico.\n\n## O Docker Resolveria?\nSim, o Docker resolveria. Se você soubesse usar Docker. Mas seu Dockerfile tem mais buracos que queijo suíço e a imagem pesa 4GB porque você partiu de um Ubuntu completo ao invés de Alpine. Agora \"na minha máquina funciona\" virou \"no meu container funciona\". O problema só mudou de endereço."
+    },
+    "post6": {
+      "title": "A Arte de Escrever Comentários que Não Explicam Nada",
+      "excerpt": "Comentar código é uma arte perdida. A maioria dos devs prefere escrever o código mais críptico possível e deixar para o próximo (ou para o eu do futuro) decifrar.",
+      "date": "25 de Janeiro, 2024",
+      "readTime": "4 min de leitura",
+      "category": "Clean Code",
+      "content": "## O Clássico \"O Que\"\n`i++; // incrementa i`\nObrigado, Capitão Óbvio. Se eu não soubesse o que `++` faz, eu não deveria estar aqui. O comentário inútil ocupa espaço, gasta bytes e insulta a inteligência do leitor.\n\n## O Comentário Mentiroso\n`// Retorna true se o usuário for admin`\n`return false;`\nO código mudou. O comentário não. Agora você tem um comentário que mente descaradamente e te induz ao erro. Confie no código, nunca no comentário.\n\n## O Pedido de Desculpas\n`// Deus me perdoe por isso, mas o prazo acaba hoje`\n`eval(input);`\nEsse comentário é um grito de socorro. Ele não explica o código, ele confessa um crime. Se você encontrar isso, fuja.\n\n## O TODO Eterno\n`// TODO: Refatorar isso urgente`\n(Data do commit: 4 anos atrás)\n\"Urgente\" é um conceito relativo no desenvolvimento de software. Esse TODO é agora parte da arquitetura do sistema. É um monumento histórico.\n\n## A Biografia\n`// Criado por João em 2015. Modificado por Maria em 2016. Quebrado por Pedro em 2018.`\nGit blame existe pra isso, gente. Não precisamos de uma árvore genealógica no cabeçalho do arquivo."
+    },
+    "post7": {
+      "title": "Deploy de Sexta: Uma História de Terror Baseada em Fatos Reais",
+      "excerpt": "Era uma sexta-feira chuvosa. O relógio marcava 16:45. O estagiário perguntou: \"Posso fazer o deploy? É só uma alteração de texto\". E assim começou o pesadelo.",
+      "date": "28 de Janeiro, 2024",
+      "readTime": "10 min de leitura",
+      "category": "Terror",
+      "content": "## O Início da Tragédia\nTodo mundo sabe a regra: Sexta-feira é dia de read-only. Mas a arrogância humana não tem limites. \"É rapidinho\", disseram. \"O que pode dar errado?\", perguntaram.\n\n## 17:00 - O Deploy\nO pipeline ficou verde. Sucesso! A equipe começou a arrumar as mochilas. O slack estava quieto. Quieto até demais.\n\n## 17:15 - O Primeiro Grito\nO suporte mandou mensagem: \"Clientes não conseguem logar\". Você pensa: \"Deve ser cache\". Limpa o cache. Nada.\n\n## 17:30 - A Descoberta\nA \"alteração de texto\" na verdade mudou o encoding do arquivo de configuração de UTF-8 para ASCII. Todos os acentos viraram caracteres alienígenas. O sistema de login crashou ao tentar ler o nome do usuário \"João\".\n\n## 18:00 - O Caos\nO rollback falhou. O backup da manhã estava corrompido (ninguém testava o restore, clássico). O CTO está ligando. Sua pizza esfriou. O fim de semana acabou antes de começar.\n\n## A Lição\nNão faça deploy na sexta. Não importa se é \"só um texto\". O universo odeia deploys de sexta. Respeite os deuses da TI ou pague com sua sanidade."
     },
     "featured": {
       "title": "Conteúdo em Destaque",
@@ -353,6 +382,49 @@
       "paragraph1": "Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato conosco:",
       "twitter": "Contato via Twitter"
     }
+  },
+  "Auth": {
+    "signIn": "Entrar",
+    "signUp": "Criar Conta",
+    "signOut": "Sair",
+    "profile": "Perfil",
+    "settings": "Configurações"
+  },
+  "Navigation": {
+    "leaderboard": "Ranking",
+    "badges": "Conquistas",
+    "profile": "Perfil"
+  },
+  "Leaderboard": {
+    "title": "Ranking dos Desmotivados",
+    "subtitle": "Veja quem são os desenvolvedores mais realistas da nossa comunidade",
+    "rank": "Posição",
+    "user": "Usuário",
+    "points": "Pontos",
+    "phrases": "Frases",
+    "empty": "Ninguém no topo ainda. Seja o primeiro!",
+    "yourPosition": "Sua Posição"
+  },
+  "Badges": {
+    "title": "Suas Conquistas",
+    "subtitle": "Colete medalhas enquanto encara a realidade cruel do desenvolvimento",
+    "rarity": "Raridade",
+    "unlocked": "Desbloqueado",
+    "locked": "Bloqueado"
+  },
+  "Profile": {
+    "title": "Seu Perfil",
+    "welcome": "Bem-vindo ao seu painel de desmotivação",
+    "points": "pontos",
+    "daysStreak": "dias de ofensiva",
+    "stats": "Suas Estatísticas",
+    "phrasesGenerated": "Frases Vistas",
+    "badgesUnlocked": "Conquistas",
+    "longestStreak": "Maior Ofensiva",
+    "totalPoints": "Total de Pontos",
+    "latestBadges": "Últimas Conquistas",
+    "viewAll": "Ver todas",
+    "noBadges": "Nenhuma conquista ainda. Comece a gerar frases!"
   },
   "phrases": [
     "Seu código é tão lento que o usuário já aposentou no INSS esperando a tela carregar",

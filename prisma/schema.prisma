@@ -1,0 +1,187 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ============================================
+// USER MODELS
+// ============================================
+
+model User {
+  id              String   @id @default(uuid())
+  clerkId         String   @unique @map("clerk_id")
+  githubUsername  String?  @map("github_username")
+  email           String   @unique
+  avatarUrl       String?  @map("avatar_url")
+  displayName     String?  @map("display_name")
+  totalPoints     Int      @default(0) @map("total_points")
+  currentStreak   Int      @default(0) @map("current_streak")
+  longestStreak   Int      @default(0) @map("longest_streak")
+  level           Int      @default(1)
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+  lastActivityAt  DateTime @default(now()) @map("last_activity_at")
+
+  // Relations
+  activities      UserActivity[]
+  badges          UserBadge[]
+  phrasesSeen     PhraseSeen[]
+  favorites       UserFavorite[]
+  dailyStreaks    DailyStreak[]
+
+  @@map("users")
+}
+
+// ============================================
+// ACTIVITY TRACKING
+// ============================================
+
+enum ActionType {
+  GENERATE
+  SHARE
+  LOGIN
+  STREAK
+  BADGE_UNLOCK
+  LEVEL_UP
+}
+
+model UserActivity {
+  id           String     @id @default(uuid())
+  userId       String     @map("user_id")
+  actionType   ActionType @map("action_type")
+  pointsEarned Int        @map("points_earned")
+  metadata     Json?      // {phrase_index, platform, badge_id, etc}
+  createdAt    DateTime   @default(now()) @map("created_at")
+  date         DateTime   @default(now()) @db.Date
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, date])
+  @@index([userId, actionType])
+  @@map("user_activities")
+}
+
+// ============================================
+// BADGE SYSTEM
+// ============================================
+
+enum BadgeCategory {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+  SPECIAL
+}
+
+enum RequirementType {
+  COUNT          // Total count (e.g., 100 phrases)
+  STREAK         // Consecutive days
+  UNIQUE         // Unique items (e.g., see all 75 phrases)
+  TIME           // Time-based (e.g., after midnight)
+  SPECIAL        // Custom logic
+}
+
+enum BadgeRarity {
+  COMMON
+  RARE
+  EPIC
+  LEGENDARY
+}
+
+model Badge {
+  id              String          @id @default(uuid())
+  slug            String          @unique
+  namePt          String          @map("name_pt")
+  nameEn          String          @map("name_en")
+  descriptionPt   String          @map("description_pt")
+  descriptionEn   String          @map("description_en")
+  icon            String          // emoji or icon identifier
+  category        BadgeCategory
+  requirementType RequirementType @map("requirement_type")
+  requirementValue Int            @map("requirement_value")
+  pointsReward    Int             @map("points_reward")
+  rarity          BadgeRarity
+  createdAt       DateTime        @default(now()) @map("created_at")
+
+  // Relations
+  userBadges UserBadge[]
+
+  @@map("badges")
+}
+
+model UserBadge {
+  id         String   @id @default(uuid())
+  userId     String   @map("user_id")
+  badgeId    String   @map("badge_id")
+  progress   Int      @default(0) // For tracking progress towards badge
+  unlockedAt DateTime @default(now()) @map("unlocked_at")
+
+  // Relations
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badge Badge @relation(fields: [badgeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, badgeId])
+  @@index([userId])
+  @@map("user_badges")
+}
+
+// ============================================
+// PHRASE TRACKING
+// ============================================
+
+model PhraseSeen {
+  id          String   @id @default(uuid())
+  userId      String   @map("user_id")
+  phraseIndex Int      @map("phrase_index") // 0-74
+  seenCount   Int      @default(1) @map("seen_count")
+  firstSeenAt DateTime @default(now()) @map("first_seen_at")
+  lastSeenAt  DateTime @default(now()) @map("last_seen_at")
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, phraseIndex])
+  @@index([userId])
+  @@map("phrases_seen")
+}
+
+model UserFavorite {
+  id          String   @id @default(uuid())
+  userId      String   @map("user_id")
+  phraseIndex Int      @map("phrase_index")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, phraseIndex])
+  @@index([userId])
+  @@map("user_favorites")
+}
+
+// ============================================
+// STREAK TRACKING
+// ============================================
+
+model DailyStreak {
+  id               String   @id @default(uuid())
+  userId           String   @map("user_id")
+  date             DateTime @db.Date
+  phrasesGenerated Int      @default(0) @map("phrases_generated")
+  pointsEarned     Int      @default(0) @map("points_earned")
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, date])
+  @@index([userId, date])
+  @@map("daily_streaks")
+}

@@ -9,6 +9,7 @@
     "shareWhatsApp": "WhatsApp",
     "shareTwitter": "Twitter",
     "shareLinkedIn": "LinkedIn",
+    "shareCard": "Download Card",
     "shareHashtag": "use the hashtag #desmotivadev, let's get trending!",
     "footer": {
       "about": "About",
@@ -85,28 +86,56 @@
       "excerpt": "Feeling too confident in your code? Think you've finally mastered that technology? Watch out! These are classic signs you need a reality check. Discover the 10 unmistakable signs it's time to visit Desmotiva Dev.",
       "date": "January 15, 2024",
       "readTime": "5 min read",
-      "category": "Humor"
+      "category": "Humor",
+      "content": "## 1. \"It works on my machine\"\nIf this phrase leaves your mouth more than 3 times a week, we have a problem. The client won't access the site from your machine (unless you turn your laptop into a server, which, knowing you, is quite possible).\n\n## 2. You think tests are a \"waste of time\"\n\"Why test if I know what I coded?\" - said the dev 5 minutes before crashing the production database. Tests aren't there to prove you're right, they're there to prove that you will, invariably, be wrong.\n\n## 3. Your Google history is just Stack Overflow\nDon't get me wrong, everyone uses it. But if you need to search \"how to declare variable in Python\" after 3 years of experience, maybe it's time to rethink.\n\n## 4. You believe the PM's deadline\nAh, sweet innocence. The PM says \"just a little button\", and you believe it will take 10 minutes. 3 days later, you're refactoring the entire architecture because the button needed a new hardcoded API.\n\n## 5. You dream in code\nThat's not dedication, that's trauma. If you wake up sweating because you dreamt you forgot a semicolon, you need a vacation (or therapy).\n\n## 6. \"I'll comment later\"\nSpoiler: You won't. Nobody will. That piece of code will stay there, obscure and mysterious, like an Egyptian hieroglyph, until the day someone tries to touch it and curses your descendants.\n\n## 7. Coffee has no effect anymore\nIf you drink 1 liter of coffee and the only effect is an eyelid twitch, your body has given up. You are powered by anxiety and blown deadlines now.\n\n## 8. Git Push Force is your best friend\nIf resolving conflicts for you means deleting others' work and imposing your sovereign will on the repository, you're not a leader, you're a bad code dictator.\n\n## 9. You think the user is stupid\nThe user isn't stupid, they are creative in the art of destroying your software. If your form allows typing a birthdate in the future and the system breaks, it's not the fault of the user born in 2099.\n\n## 10. You are reading this\nIf you stopped coding to read 10 reasons to get demotivated, congratulations! You have already accepted your fate. Welcome to the club."
     },
     "post2": {
       "title": "Anatomy of a Production Bug at 6pm on Friday",
       "excerpt": "Every developer knows this moment: it's 5:55pm on Friday, you're about to log out, and then... BOOM! A critical bug in production. Let's explore the complete anatomy of this recurring nightmare and how to survive it (spoiler: you won't).",
       "date": "January 10, 2024",
       "readTime": "7 min read",
-      "category": "Career"
+      "category": "Career",
+      "content": "## 5:55 PM - The False Sense of Security\nThe sun is setting (lie, you work in a dark room). Slack is getting quiet. You think: \"I'll just do this quick deploy, it's just a button color change\".\n\n## 5:58 PM - The Fatal Click\n`git push origin master`. CI/CD runs. Green lights. You feel like a tech god. Nothing can go wrong. You close your laptop lid.\n\n## 6:02 PM - The Phone Rings\nIt's not your mom. It's not Uber Eats. It's the CTO. \"The site is down. Everything. Even the backup is gone.\"\n\n## 6:05 PM - Denial\n\"Impossible, it worked on my machine!\", you scream into the void. You frantically open your laptop. Error 500. Error 500 everywhere.\n\n## 6:30 PM - Despair\nYou discover the \"color change\" had a cyclic dependency that deleted the users table (don't ask how, you're talented at this). The whole team is summoned. Happy hour is canceled.\n\n## 7:45 PM - The Blame\nSomeone suggests a rollback. You try. The rollback fails because the database migration wasn't reversible. Of course it wasn't.\n\n## 9:00 PM - The Workaround\nYour senior, with deep dark circles, suggests commenting out the line that validates user existence. \"Just to get it up\", he says. A tear rolls down. The system comes back online, limping, bleeding, but alive.\n\n## 10:15 PM - The Lesson (that won't be learned)\nYou promise never to deploy on Friday again. You swear on your mechanical keyboard. But we know the truth... Next Friday, at 5:55 PM, the adrenaline will call again."
     },
     "post3": {
       "title": "Git Commit Messages: A Story of Desperation",
       "excerpt": "From 'fix' to 'IT WORKS DAMMIT' - an epic journey through the most desperate commit messages in software development history. Includes real examples (anonymized to protect the guilty) and tips on how NOT to do it.",
       "date": "January 5, 2024",
       "readTime": "6 min read",
-      "category": "Development"
+      "category": "Development",
+      "content": "## The Beginning: Hope\n`feat: adds user authentication`\nLook how professional. Conventional Commits standard. Everything beautiful, organized.\n\n## The Middle: Reality\n`fix: fixes login bug`\n`fix: now it goes`\n`fix: fixing typo`\n`fix: oh god why doesn't it work`\nHere sanity begins to slip through fingers. That cute standard? Gone.\n\n## The End: Chaos\n`wip`\n`aaaaa`\n`WORKS DAMMIT`\n`final commit final fr now it goes v2`\n`revert \"revert \"fix: login\"\"`\n\n## Psychiatric Analysis via Git Log\nIt's possible to trace a dev's psychological profile just by reading their Friday afternoon commits. It starts with stoicism and ends in pure nihilism.\n\n## Golden Tip\nIf you ever have to `git commit --amend` for the fifth time, stop. Breathe. Go get a coffee. Or accept that your destiny is to have a dirty history forever. After all, \"squash commits\" at the end only serves to hide the shame, and we know what you did."
     },
     "post4": {
       "title": "How to Survive a 2-Hour Daily",
       "excerpt": "The daily should last 15 minutes. YOUR daily lasts 2 hours. In this complete guide, we explore survival strategies, meditation techniques during endless meetings, and how to pretend you're paying attention while mentally you're already debugging that error.",
       "date": "January 1, 2024",
       "readTime": "8 min read",
-      "category": "Productivity"
+      "category": "Productivity",
+      "content": "## 1. The \"Statue\" Technique\nWhen the camera is on and you feel sleep hitting, freeze. If someone asks, say your internet froze. Keep your eyes open, but your soul can be sleeping.\n\n## 2. Daily Bingo\nMake a mental card:\n- \"Alignment\"\n- \"Blocker\"\n- \"Synergy\"\n- \"Let's schedule a pre-daily to align the daily\"\n- \"This is legacy's fault\"\nWhoever completes the card first wins the right to mute the mic and cry.\n\n## 3. The Art of Saying Nothing with Many Words\nWhen it's your turn:\n\"So, yesterday I had a technical blocker in the API stack, which generated overhead in the deploy throughput, but today I'll act on mitigating this gap to ensure value stream delivery.\"\nTranslation: \"I did nothing yesterday and I'll do nothing today.\"\n\n## 4. The Microphone Problem\n\"Can you hear me?\" - repeat this 5 times. \"I think my mic is bad, I'll type in chat\". There, you won 10 minutes of peace while pretending to fix the sound.\n\n## 5. Productive Dissociation\nLearn to make a nodding face while thinking about the grocery list, or why Donald Duck doesn't wear pants but wears a towel when leaving the shower. The important thing is to nod every 30 seconds."
+    },
+    "post5": {
+      "title": "Why your code works on your machine (and nowhere else)",
+      "excerpt": "The phrase \"it works on my machine\" is the official slogan of the junior developer. Let's find out why the universe conspires against your deploy.",
+      "date": "January 20, 2024",
+      "readTime": "6 min read",
+      "category": "DevOps",
+      "content": "## The Mystical Environment\nYour machine is a delicate ecosystem, cultivated with care, where library versions were hand-picked (by chance) and environment variables were hardcoded into the heart of the operating system. The production server, on the other hand, is a hostile wasteland.\n\n## The Curse of Localhost\nIn localhost, everything is forgiven. The database responds in 0ms, the network never fails, and CORS doesn't exist. It's the Garden of Eden of software. Production is the real world: cruel, slow, and full of firewall rules.\n\n## Phantom Dependencies\nRemember that lib you installed globally in 2019 to test a tutorial? Your project depends on it now. Nobody knows, not even you. But the CI/CD server knows. And it will fail the build with sadistic pleasure.\n\n## Would Docker Solve It?\nYes, Docker would solve it. If you knew how to use Docker. But your Dockerfile has more holes than Swiss cheese and the image weighs 4GB because you started from a full Ubuntu instead of Alpine. Now \"it works on my machine\" became \"it works in my container\". The problem just changed address."
+    },
+    "post6": {
+      "title": "The Art of Writing Comments that Explain Nothing",
+      "excerpt": "Commenting code is a lost art. Most devs prefer to write the most cryptic code possible and leave it for the next one (or for future self) to decipher.",
+      "date": "January 25, 2024",
+      "readTime": "4 min read",
+      "category": "Clean Code",
+      "content": "## The Classic \"What\"\n`i++; // increments i`\nThank you, Captain Obvious. If I didn't know what `++` does, I shouldn't be here. The useless comment takes up space, wastes bytes, and insults the reader's intelligence.\n\n## The Lying Comment\n`// Returns true if user is admin`\n`return false;`\nThe code changed. The comment didn't. Now you have a comment that lies blatantly and misleads you. Trust the code, never the comment.\n\n## The Apology\n`// God forgive me for this, but the deadline is today`\n`eval(input);`\nThis comment is a cry for help. It doesn't explain the code, it confesses a crime. If you find this, run.\n\n## The Eternal TODO\n`// TODO: Refactor this urgent`\n(Commit date: 4 years ago)\n\"Urgent\" is a relative concept in software development. This TODO is now part of the system architecture. It's a historical monument.\n\n## The Biography\n`// Created by John in 2015. Modified by Mary in 2016. Broken by Peter in 2018.`\nGit blame exists for this, people. We don't need a family tree in the file header."
+    },
+    "post7": {
+      "title": "Deploy Friday: A Horror Story Based on True Events",
+      "excerpt": "It was a rainy Friday. The clock struck 4:45 PM. The intern asked: \"Can I deploy? It's just a text change\". And so the nightmare began.",
+      "date": "January 28, 2024",
+      "readTime": "10 min read",
+      "category": "Horror",
+      "content": "## The Tragedy Begins\nEveryone knows the rule: Friday is read-only day. But human arrogance has no limits. \"It's quick\", they said. \"What could go wrong?\", they asked.\n\n## 5:00 PM - The Deploy\nThe pipeline went green. Success! The team started packing their bags. Slack was quiet. Too quiet.\n\n## 5:15 PM - The First Scream\nSupport messaged: \"Customers can't log in\". You think: \"Must be cache\". Clear cache. Nothing.\n\n## 5:30 PM - The Discovery\nThe \"text change\" actually changed the configuration file encoding from UTF-8 to ASCII. All accents became alien characters. The login system crashed when trying to read the username \"João\".\n\n## 6:00 PM - The Chaos\nThe rollback failed. The morning backup was corrupted (nobody tested the restore, classic). The CTO is calling. Your pizza got cold. The weekend ended before it began.\n\n## The Lesson\nDon't deploy on Friday. It doesn't matter if it's \"just text\". The universe hates Friday deploys. Respect the IT gods or pay with your sanity."
     },
     "featured": {
       "title": "Featured Content",
@@ -353,6 +382,49 @@
       "paragraph1": "If you have any questions about this Privacy Policy, contact us:",
       "twitter": "Contact via Twitter"
     }
+  },
+  "Auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "profile": "Profile",
+    "settings": "Settings"
+  },
+  "Navigation": {
+    "leaderboard": "Ranking",
+    "badges": "Achievements",
+    "profile": "Profile"
+  },
+  "Leaderboard": {
+    "title": "Leaderboard of the Demotivated",
+    "subtitle": "See who are the most realistic developers in our community",
+    "rank": "Rank",
+    "user": "User",
+    "points": "Points",
+    "phrases": "Quotes",
+    "empty": "Nobody at the top yet. Be the first!",
+    "yourPosition": "Your Position"
+  },
+  "Badges": {
+    "title": "Your Achievements",
+    "subtitle": "Collect badges while facing the harsh reality of development",
+    "rarity": "Rarity",
+    "unlocked": "Unlocked",
+    "locked": "Locked"
+  },
+  "Profile": {
+    "title": "Your Profile",
+    "welcome": "Welcome to your demotivation dashboard",
+    "points": "points",
+    "daysStreak": "days streak",
+    "stats": "Your Stats",
+    "phrasesGenerated": "Quotes Seen",
+    "badgesUnlocked": "Achievements",
+    "longestStreak": "Longest Streak",
+    "totalPoints": "Total Points",
+    "latestBadges": "Latest Achievements",
+    "viewAll": "View all",
+    "noBadges": "No achievements yet. Start generating quotes!"
   },
   "phrases": [
     "Your code is so slow that the user already retired waiting for the screen to load",
