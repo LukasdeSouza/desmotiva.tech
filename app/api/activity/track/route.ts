@@ -7,8 +7,13 @@ export async function POST(request: NextRequest) {
   try {
     const cookieStore = await cookies();
     const guestIdCookie = cookieStore.get('guest_id');
-
-    let userId = guestIdCookie?.value;
+    
+    // Get guestId from cookie or from request body
+    const body = await request.json();
+    const { action, data, guestId: clientGuestId } = body;
+    
+    // Use client-provided guestId if available, otherwise use cookie
+    let userId = clientGuestId || guestIdCookie?.value;
     let isNewGuest = false;
 
     if (!userId) {
@@ -41,22 +46,7 @@ export async function POST(request: NextRequest) {
       } catch (error) {
         console.error('Error ensuring guest user:', error);
       }
-    } else {
-      // If we have a cookie, we assume the user exists, but we could double check if needed.
-      // For performance, we skip generic "ensure" on every request if we trust the cookie.
-      // However, if the DB was wiped, the cookie might be stale.
-      // Let's lazy-check locally or just let ActivityService fail?
-      // ActivityService typically assumes user exists.
-      // Let's do a quick check only if it's a critical action or just rely on FK constraints failing?
-      // FK will fail if user doesn't exist.
-      // So we should probably ensure existence if it's a guest ID.
-      if (userId.startsWith('guest_')) {
-        // Optional: Check existence if we suspect issues, but for now relies on previous creation.
-      }
     }
-
-    const body = await request.json();
-    const { action, data } = body;
 
     let result;
 

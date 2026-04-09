@@ -185,3 +185,48 @@ model DailyStreak {
   @@index([userId, date])
   @@map("daily_streaks")
 }
+
+// ============================================
+// USER SUBMITTED PHRASES
+// ============================================
+
+enum PhraseStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model UserPhrase {
+  id          String       @id @default(uuid())
+  text        String
+  category    String       @default("general")
+  status      PhraseStatus @default(PENDING)
+  authorId    String?      @map("author_id") // guest_id do autor
+  upvotes     Int          @default(0)
+  downvotes   Int          @default(0)
+  createdAt   DateTime     @default(now()) @map("created_at")
+  updatedAt   DateTime     @updatedAt @map("updated_at")
+
+  // Votos dos usuários
+  phraseVotes UserPhraseVote[]
+
+  @@index([status])
+  @@index([category])
+  @@index([upvotes])
+  @@map("user_phrases")
+}
+
+model UserPhraseVote {
+  id          String     @id @default(uuid())
+  userId      String     @map("user_id")
+  phraseId    String     @map("phrase_id")
+  voteType    String     @map("vote_type") // 'up' or 'down'
+  createdAt   DateTime   @default(now()) @map("created_at")
+
+  // Relations
+  phrase UserPhrase @relation(fields: [phraseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, phraseId])
+  @@index([phraseId])
+  @@map("user_phrase_votes")
+}

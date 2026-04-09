@@ -6,15 +6,23 @@ import { sendGAEvent } from '@next/third-parties/google';
 import Image from 'next/image';
 import AdsterraAd from '../components/AdSense';
 import MemeGenerator from '../components/MemeGenerator';
+import SubmitPhrase from '../components/SubmitPhrase';
 
 export default function Home() {
     const [currentPhrase, setCurrentPhrase] = useState<string>('');
+    const [currentPhraseIndex, setCurrentPhraseIndex] = useState<number>(-1);
     const [isVisible, setIsVisible] = useState(false);
     const [copied, setCopied] = useState(false);
     const [animationKey, setAnimationKey] = useState(0);
     const [showMemeGenerator, setShowMemeGenerator] = useState(false);
+    const [isFavorited, setIsFavorited] = useState(false);
+    const [showSubmitForm, setShowSubmitForm] = useState(false);
+    const [phraseUpvotes, setPhraseUpvotes] = useState(0);
+    const [phraseDownvotes, setPhraseDownvotes] = useState(0);
+    const [userVote, setUserVote] = useState<'up' | 'down' | null>(null);
+    const [currentPhraseId, setCurrentPhraseId] = useState<string | number>('original');
 
-    const getRandomPhrase = () => {
+    const getRandomPhrase = async () => {
         const randomIndex = Math.floor(Math.random() * phrases.length);
         const newPhrase = phrases[randomIndex].text;
 
@@ -24,14 +32,53 @@ export default function Home() {
         }
 
         setCurrentPhrase(newPhrase);
+        setCurrentPhraseIndex(randomIndex);
         setIsVisible(true);
         setCopied(false);
+        setIsFavorited(false); // Reset favorite state for new phrase
+
+        // Track phrase generation in database (for guest/logged user)
+        try {
+            // Get or create guest ID client-side
+            let guestId = document.cookie.match(/guest_id=([^;]+)/)?.[1];
+            if (!guestId) {
+                guestId = `guest_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+                document.cookie = `guest_id=${guestId};max-age=${60*60*24*365*10};path=/`;
+            }
+            
+            // Track the phrase generation - include guestId in body
+            await fetch('/api/activity/track', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    action: 'generate_phrase',
+                    data: {
+                        phraseIndex: randomIndex,
+                        locale: 'pt'
+                    },
+                    guestId // Send guestId to server
+                })
+            });
+        } catch (error) {
+            console.error('Error tracking phrase generation:', error);
+            // Don't break the UI if tracking fails
+        }
 
         // Track event no Google Analytics
         sendGAEvent('event', 'generate_phrase', {
             event_category: 'engagement',
             event_label: 'new_phrase_generated'
         });
+    };
+
+    // Helper function to get guest ID
+    const getGuestId = () => {
+        let guestId = document.cookie.match(/guest_id=([^;]+)/)?.[1];
+        if (!guestId) {
+            guestId = `guest_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+            document.cookie = `guest_id=${guestId};max-age=${60*60*24*365*10};path=/`;
+        }
+        return guestId;
     };
 
     const copyToClipboard = async () => {
@@ -85,6 +132,75 @@ export default function Home() {
             content_type: 'phrase',
             event_category: 'social_share'
         });
+    };
+
+    const toggleFavorite = async () => {
+        if (currentPhraseIndex === -1) return;
+
+        try {
+            const guestId = getGuestId();
+
+            const response = await fetch('/api/activity/track', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    action: 'toggle_favorite',
+                    data: {
+                        phraseIndex: currentPhraseIndex
+                    },
+                    guestId
+                })
+            });
+
+            const result = await response.json();
+            if (result.success && result.data) {
+                setIsFavorited(result.data.isFavorite);
+            }
+
+            // Track favorite action
+            sendGAEvent('event', 'toggle_favorite', {
+                event_category: 'engagement',
+                event_label: isFavorited ? 'unfavorite' : 'favorite'
+            });
+        } catch (error) {
+            console.error('Error toggling favorite:', error);
+        }
+    };
+
+    const handleVote = async (voteType: 'up' | 'down') => {
+        // Só pode votar em frases de usuário (não nas originais)
+        if (currentPhraseId === 'original' || typeof currentPhraseId === 'number') {
+            return; // Não permitir voto em frases originais
+        }
+
+        try {
+            const guestId = getGuestId();
+
+            const response = await fetch('/api/phrases/user-vote', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    phraseId: currentPhraseId,
+                    voteType,
+                    userId: guestId
+                })
+            });
+
+            const result = await response.json();
+            
+            if (result.success && result.data) {
+                // Atualizar UI com novos valores
+                setUserVote(result.data.userVote);
+                // Recarregar contadores seria ideal, mas por agora mantemos estado local
+            }
+
+            sendGAEvent('event', 'vote_phrase', {
+                event_category: 'engagement',
+                event_label: voteType
+            });
+        } catch (error) {
+            console.error('Error voting:', error);
+        }
     };
 
     return (
@@ -157,6 +273,19 @@ export default function Home() {
                             Pegue aqui seu desmotivacional
                         </button>
 
+                        <button
+                            onClick={() => setShowSubmitForm(!showSubmitForm)}
+                            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg text-sm transition-colors"
+                        >
+                            {showSubmitForm ? '✕ Cancelar' : '✍️ Criar minha frase'}
+                        </button>
+
+                        {showSubmitForm && (
+                            <div className="w-full">
+                                <SubmitPhrase onClose={() => setShowSubmitForm(false)} />
+                            </div>
+                        )}
+
                         {/* Anúncio Lateral (Desktop) */}
                         <div className="hidden xl:block fixed right-4 top-1/2 transform -translate-y-1/2 z-10">
                             <AdsterraAd
@@ -221,6 +350,44 @@ export default function Home() {
                                         </svg>
                                         LinkedIn
                                     </button>
+
+                                    <button
+                                        onClick={toggleFavorite}
+                                        className={`flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition-colors duration-200 w-full sm:w-auto ${
+                                            isFavorited 
+                                                ? 'bg-red-600 hover:bg-red-700' 
+                                                : 'bg-gray-600 hover:bg-gray-500'
+                                        }`}
+                                        aria-label={isFavorited ? 'Remover favorito' : 'Adicionar favorito'}
+                                    >
+                                        <svg className="w-4 h-4" fill={isFavorited ? 'currentColor' : 'none'} stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                        {isFavorited ? 'Favoritado' : 'Favoritar'}
+                                    </button>
+
+                                    <div className="flex items-center gap-2">
+                                        <button
+                                            onClick={() => handleVote('up')}
+                                            className="flex items-center justify-center gap-1 px-3 py-2 bg-green-600/20 hover:bg-green-600/40 text-green-400 rounded-lg transition-colors"
+                                            aria-label="Upvote"
+                                        >
+                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                                            </svg>
+                                            <span className="text-xs">{phraseUpvotes}</span>
+                                        </button>
+                                        <button
+                                            onClick={() => handleVote('down')}
+                                            className="flex items-center justify-center gap-1 px-3 py-2 bg-red-600/20 hover:bg-red-600/40 text-red-400 rounded-lg transition-colors"
+                                            aria-label="Downvote"
+                                        >
+                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                            <span className="text-xs">{phraseDownvotes}</span>
+                                        </button>
+                                    </div>
                                 </div>
                                 <small className='text-slate-400 mt-1'>use a hashtag #desmotivadev, bora pegar top 1 fi!</small>
 
